@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>/authors/Jiffy.html</loc>
-<lastmod>2020-06-02T02:24:37+00:00</lastmod>
+<lastmod>2020-06-12T03:18:50+00:00</lastmod>
 </url>
 <url>
 <loc>/guides/2019/09/13/sleep.html</loc>
@@ -15,6 +15,10 @@
 <url>
 <loc>/test/2020/06/02/test-terminology.html</loc>
 <lastmod>2020-06-02T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>/guides/2020/06/12/Windows-and-Unix-command-line-equivalents.html</loc>
+<lastmod>2020-06-12T00:00:00+00:00</lastmod>
 </url>
 <url>
 <loc>/categories_all.html</loc>
