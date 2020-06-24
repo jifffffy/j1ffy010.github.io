@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-06-24T02:30:42+00:00</updated><id>/feed.xml</id><title type="html">Jekyll AsciiDoc Blog</title><subtitle>The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.</subtitle><entry><title type="html">How to use a directory outside C:\Users with Docker Toolbox/Docker for Windows</title><link href="/guides/2020/06/24/How-to-use-a-directory-outside-C-dir.html" rel="alternate" type="text/html" title="How to use a directory outside C:\Users with Docker Toolbox/Docker for Windows" /><published>2020-06-24T00:00:00+00:00</published><updated>2020-06-24T00:00:00+00:00</updated><id>/guides/2020/06/24/How-to-use-a-directory-outside-C-dir</id><content type="html" xml:base="/guides/2020/06/24/How-to-use-a-directory-outside-C-dir.html">&lt;div class=&quot;sect1&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-06-24T07:34:19+00:00</updated><id>/feed.xml</id><title type="html">Jekyll AsciiDoc Blog</title><subtitle>The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.</subtitle><entry><title type="html">How to use a directory outside C:\Users with Docker Toolbox/Docker for Windows</title><link href="/guides/2020/06/24/How-to-use-a-directory-outside-C-dir.html" rel="alternate" type="text/html" title="How to use a directory outside C:\Users with Docker Toolbox/Docker for Windows" /><published>2020-06-24T00:00:00+00:00</published><updated>2020-06-24T00:00:00+00:00</updated><id>/guides/2020/06/24/How-to-use-a-directory-outside-C-dir</id><content type="html" xml:base="/guides/2020/06/24/How-to-use-a-directory-outside-C-dir.html">&lt;div class=&quot;sect1&quot;&gt;
 &lt;h2 id=&quot;docker_for_windows&quot;&gt;Docker for Windows&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -166,8 +166,182 @@ release中的下载链接虽然是http://github.com开头,但会跳转到*.s3.am
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre&gt;gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/  \
-    &amp;amp;&amp;amp; bundle config mirror.https://rubygems.org https://gems.ruby-china.com&lt;/pre&gt;
+&lt;pre&gt;gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/  &amp;amp;&amp;amp; bundle config mirror.https://rubygems.org https://gems.ruby-china.com&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;docker&quot;&gt;Docker&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;获取container IP地址:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;​​$ ​​docker​​ ​​ps​
+  ​ CONTAINER ID IMAGE more info
+  ​ d7230c4b0595 e28cf982ae39 .........
+
+​$ ​​docker​​ ​​inspect​​ ​​--format​​ ​​'{{ .NetworkSettings.IPAddress }}'​​ ​​d7230c4b0595​
+   172.17.0.2&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;docker_compose&quot;&gt;Docker compose&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;执行流程：&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Creates a separate network just for the app:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;Creating network &quot;myapp_default&quot; with the default driver&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;admonitionblock note&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-note&quot; title=&quot;Note&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+By convention, Compose names the network &amp;lt;appname&amp;gt;_default , where appname is
+      inferred from the containing directory.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Creates any non-locally mounted volumes defined for the app&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Builds an image for any services with a build directive&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;Building web
+​ Step 1/8 : FROM ruby:2.6
+​ ​ ---&amp;gt;​​ ​​f28a9e1d0449​
+​ Step 2/8 : LABEL maintainer=&quot;rob@DockerForRailsDevelopers.com&quot;
+​ ​ ---&amp;gt;​​ ​​Using​​ ​​cache​
+​ ​ ---&amp;gt;​​ ​​d69ea7d90f89​
+​ Step 3/8 : RUN apt-get update -yqq &amp;amp;&amp;amp; apt-get install -yqq --no-install-
+​ recommends nodejs
+​ ​ ---&amp;gt;​​ ​​Using​​ ​​cache​
+​ ​ ---&amp;gt;​​ ​​463750079bef​
+​ ...
+​ Step 8/8 : CMD [&quot;bin/rails&quot;, &quot;s&quot;, &quot;-b&quot;, &quot;0.0.0.0&quot;]
+​ ​ ---&amp;gt;​​ ​​Running​​ ​​in​​ ​​b11e989011fc​
+​ Removing intermediate container b11e989011fc
+​ ​ ---&amp;gt;​​ ​​a18b3079c84b​
+​ Successfully built a18b3079c84b&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Compose gives the image a name and version by tagging it:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;Successfully tagged myapp_web:latest&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;admonitionblock note&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-note&quot; title=&quot;Note&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+using the convention &amp;lt;appname&amp;gt;_&amp;lt;service_name&amp;gt;:latest , again inferring the appname
+      from the enclosing directory. In our case, this becomes myapp_web:latest
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;admonitionblock warning&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-warning&quot; title=&quot;Warning&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+Image for service web was built because it did not already exist.
+  ​ To rebuild this image you must use &lt;code&gt;docker-compose build&lt;/code&gt; or &lt;code&gt;docker-compose
+  ​ up --build&lt;/code&gt;.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Creates a container for each service&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;Creating myapp_web_1 &amp;#8230;&amp;#8203; done&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;admonitionblock note&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-note&quot; title=&quot;Note&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+Compose creates and starts a single container for our web service based on
+      the image it has just created. It will name containers using the format
+      &lt;code&gt;&amp;lt;appname&amp;gt;_&amp;lt;service name&amp;gt;_&amp;lt;n&amp;gt;&lt;/code&gt;.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Launches a container per service&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;code&gt;Attaching to myapp_web_1&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;admonitionblock note&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-note&quot; title=&quot;Note&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+In a process known as attaching, Compose then connects our local IO streams
+     ( stdin , stdout , and stderr ) to the running container
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;As a result, we’re able to see our Rails server starting inside the container:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;web_1 | =&amp;gt; Booting Puma
+​ web_1 | =&amp;gt; Rails 5.2.2 application starting in development
+​ web_1 | =&amp;gt; Run `rails server -h` for more startup options
+​ web_1 | Puma starting in single mode...
+​ web_1 | * Version 3.12.0 (ruby 2.6.0-p0), codename: Llamas in Pajamas
+​ web_1 | * Min threads: 5, max threads: 5
+​ web_1 | * Environment: development
+​ web_1 | * Listening on tcp://0.0.0.0:3000
+​ web_1 | Use Ctrl-C to stop&lt;/pre&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

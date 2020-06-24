@@ -166,8 +166,182 @@ release中的下载链接虽然是http://github.com开头,但会跳转到*.s3.am
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/  \
-    &amp;&amp; bundle config mirror.https://rubygems.org https://gems.ruby-china.com</pre>
+<pre>gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/  &amp;&amp; bundle config mirror.https://rubygems.org https://gems.ruby-china.com</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="docker">Docker</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>获取container IP地址:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>​​$ ​​docker​​ ​​ps​
+  ​ CONTAINER ID IMAGE more info
+  ​ d7230c4b0595 e28cf982ae39 .........
+
+​$ ​​docker​​ ​​inspect​​ ​​--format​​ ​​'{{ .NetworkSettings.IPAddress }}'​​ ​​d7230c4b0595​
+   172.17.0.2</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="docker_compose">Docker compose</h3>
+<div class="paragraph">
+<p>执行流程：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Creates a separate network just for the app:</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>Creating network "myapp_default" with the default driver</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+By convention, Compose names the network &lt;appname&gt;_default , where appname is
+      inferred from the containing directory.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Creates any non-locally mounted volumes defined for the app</p>
+</li>
+<li>
+<p>Builds an image for any services with a build directive</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Building web
+​ Step 1/8 : FROM ruby:2.6
+​ ​ ---&gt;​​ ​​f28a9e1d0449​
+​ Step 2/8 : LABEL maintainer="rob@DockerForRailsDevelopers.com"
+​ ​ ---&gt;​​ ​​Using​​ ​​cache​
+​ ​ ---&gt;​​ ​​d69ea7d90f89​
+​ Step 3/8 : RUN apt-get update -yqq &amp;&amp; apt-get install -yqq --no-install-
+​ recommends nodejs
+​ ​ ---&gt;​​ ​​Using​​ ​​cache​
+​ ​ ---&gt;​​ ​​463750079bef​
+​ ...
+​ Step 8/8 : CMD ["bin/rails", "s", "-b", "0.0.0.0"]
+​ ​ ---&gt;​​ ​​Running​​ ​​in​​ ​​b11e989011fc​
+​ Removing intermediate container b11e989011fc
+​ ​ ---&gt;​​ ​​a18b3079c84b​
+​ Successfully built a18b3079c84b</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Compose gives the image a name and version by tagging it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Successfully tagged myapp_web:latest</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+using the convention &lt;appname&gt;_&lt;service_name&gt;:latest , again inferring the appname
+      from the enclosing directory. In our case, this becomes myapp_web:latest
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Image for service web was built because it did not already exist.
+  ​ To rebuild this image you must use <code>docker-compose build</code> or <code>docker-compose
+  ​ up --build</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Creates a container for each service</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>Creating myapp_web_1 &#8230;&#8203; done</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Compose creates and starts a single container for our web service based on
+      the image it has just created. It will name containers using the format
+      <code>&lt;appname&gt;_&lt;service name&gt;_&lt;n&gt;</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Launches a container per service</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>Attaching to myapp_web_1</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In a process known as attaching, Compose then connects our local IO streams
+     ( stdin , stdout , and stderr ) to the running container
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>As a result, we’re able to see our Rails server starting inside the container:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>web_1 | =&gt; Booting Puma
+​ web_1 | =&gt; Rails 5.2.2 application starting in development
+​ web_1 | =&gt; Run `rails server -h` for more startup options
+​ web_1 | Puma starting in single mode...
+​ web_1 | * Version 3.12.0 (ruby 2.6.0-p0), codename: Llamas in Pajamas
+​ web_1 | * Min threads: 5, max threads: 5
+​ web_1 | * Environment: development
+​ web_1 | * Listening on tcp://0.0.0.0:3000
+​ web_1 | Use Ctrl-C to stop</pre>
+</div>
 </div>
 </div>
 </div>
