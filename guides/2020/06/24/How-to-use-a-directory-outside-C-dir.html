@@ -2,24 +2,24 @@
 <html>
 <head>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-    <title>Docker for Rails developers</title>
+    <title>How to use a directory outside C:\Users with Docker Toolbox/Docker for Windows</title>
     
 
     <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Jekyll AsciiDoc Blog" />
     <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Docker for Rails developers | Jekyll AsciiDoc Blog</title>
+<title>How to use a directory outside C:\Users with Docker Toolbox/Docker for Windows | Jekyll AsciiDoc Blog</title>
 <meta name="generator" content="Jekyll v3.8.7" />
-<meta property="og:title" content="Docker for Rails developers" />
+<meta property="og:title" content="How to use a directory outside C:\Users with Docker Toolbox/Docker for Windows" />
 <meta name="author" content="Jiffy" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="记录学习《Docker for Rails developers》时遇到的一些问题。" />
-<meta property="og:description" content="记录学习《Docker for Rails developers》时遇到的一些问题。" />
+<meta name="description" content="On Windows, there are some restrictions on the location of your workspace folder - here is how to work around them." />
+<meta property="og:description" content="On Windows, there are some restrictions on the location of your workspace folder - here is how to work around them." />
 <meta property="og:site_name" content="Jekyll AsciiDoc Blog" />
 <meta property="og:image" content="/docker.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-06-12T00:00:00+00:00" />
+<meta property="article:published_time" content="2020-06-24T00:00:00+00:00" />
 <script type="application/ld+json">
-{"description":"记录学习《Docker for Rails developers》时遇到的一些问题。","author":{"@type":"Person","name":"Jiffy"},"@type":"BlogPosting","url":"/guides/2020/06/12/Docker.html","image":"/docker.jpg","headline":"Docker for Rails developers","dateModified":"2020-06-12T00:00:00+00:00","datePublished":"2020-06-12T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/guides/2020/06/12/Docker.html"},"@context":"https://schema.org"}</script>
+{"description":"On Windows, there are some restrictions on the location of your workspace folder - here is how to work around them.","author":{"@type":"Person","name":"Jiffy"},"@type":"BlogPosting","url":"/guides/2020/06/24/How-to-use-a-directory-outside-C-dir.html","image":"/docker.jpg","headline":"How to use a directory outside C:\\Users with Docker Toolbox/Docker for Windows","dateModified":"2020-06-24T00:00:00+00:00","datePublished":"2020-06-24T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/guides/2020/06/24/How-to-use-a-directory-outside-C-dir.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -79,82 +79,111 @@
     <div class="detail">
         <div class="detailcon">
             
-            <a title="Docker for Rails developers" href="/authors/Jiffy.html" class="detailuser">
-                <img alt="Docker for Rails developers" src="/assets/images/users/devlopr.png">
+            <a title="How to use a directory outside C:\Users with Docker Toolbox/Docker for Windows" href="/authors/Jiffy.html" class="detailuser">
+                <img alt="How to use a directory outside C:\Users with Docker Toolbox/Docker for Windows" src="/assets/images/users/devlopr.png">
                 <span>
                     <font class="username">Jiffy</font>
-                    <font class="date">12 Jun 2020</font>
+                    <font class="date">24 Jun 2020</font>
                 </span>
             </a>
             <div class="arttag">
                 
-                <a  title="Windows Docker Rails Ruby" href="/blog/tags/Windows Docker Rails Ruby" class="t1">Windows Docker Rails Ruby</a>
+                <a  title="Windows Docker" href="/blog/tags/Windows Docker" class="t1">Windows Docker</a>
                 
             </div>
             <div class="detailadoc">
                 <div class="sect1">
-<h2 id="简介">简介</h2>
+<h2 id="docker_for_windows">Docker for Windows</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>这是我学习使用Docker开发Rails项目做的记录,主要记录遇到的一些问题。</p>
+<p>In the native Docker for Windows, go to Settings &gt; Share drive, and select the drive.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="安装">安装</h2>
+<h2 id="docker_toolbox">Docker Toolbox</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>在Win7下使用Docker只能使用DockerToolbox.exe安装。</p>
+<p>Docker Toolbox expects that your data volumes will be within C:\Users. This is because Docker has limited access to the filesystem on the host computer.</p>
 </div>
 <div class="paragraph">
-<p><strong>注意:</strong> 如果之前在电脑上装过Docker,卸载后重新安装的时候,可能会遇到证书错误的问题。按照错误提示，
-简单的把C:\Users\用户\.docker\machine\certs目录下的ca.pem文件复制到C:\Users\用户\.docker\machine\machines\default目录中即可。</p>
+<p>If you need your project directories to be located elsewhere, for example on your D:\ drive, you will need to take some extra steps to achieve this.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In the steps below, we use some example names, that you should substitute for ones appropriate to your needs. They are:
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>shared folder/workspace directory: D:\Projects\Divio</p>
+</li>
+<li>
+<p>shared folder name in VIrtualBox: Divio</p>
+</li>
+<li>
+<p>mount point in the Docker Machine: /homedocker/projects</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Mount an arbitrary host directory in a Docker container</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Stop Docker Machine if it&#8217;s running, with <em>docker-machine</em> stop.</p>
+</li>
+<li>
+<p>In VirtualBox, add a Shared Folder: <strong>Settings &gt; Shared Folders &gt; Add share</strong> - this will be the directory where you want to locate your project, such as <strong>D:\Projects\Divio</strong>. Give it an appropriate Folder Name, such as Divio.</p>
+</li>
+<li>
+<p>Restart Docker Machine, with <em>docker-machine start</em>.</p>
+</li>
+<li>
+<p>SSH into the Docker Machine, with <em>docker-machine ssh</em>.</p>
+</li>
+<li>
+<p>Create a directory in the machine as a mount point for the project directories, for example: <strong>mkdir projects</strong>. This will be <strong>/home/docker/projects</strong> - you can verify it by running <em>pwd</em>.</p>
+</li>
+<li>
+<p>Mount the Shared Folder you named above (Divio) at the mount point you have created: <em>sudo mount -t vboxsf -o uid=1000,gid=50 Divio /home/docker/projects</em>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Your Docker Machine will now be able to access the files in <strong>D:\Projects\Divio</strong>  (shared in VirtualBox under the name Divio) as <strong>/home/docker/projects</strong>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="启动">启动</h2>
+<h2 id="enabling_permanent_access">Enabling permanent access</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>安装成功后,windows用户需首先点击"Docker Quickstart Terminal"快捷方式，该快捷方式会执行start.bat脚本下载一个叫"boot2docker.iso"的镜像文件。</p>
+<p>This arrangement will only persist while the Docker Machine is still running - if you restart it, the shared directory will no longer be mounted.</p>
 </div>
 <div class="paragraph">
-<p><strong>注意:</strong> 由于众所周知的原因,下载这个文件极有可能失败,引用知乎上的解决方法：</p>
+<p>You can set up permanent mounting by editing the Boot2Docker configuration.</p>
+</div>
+<div class="paragraph">
+<p>Edit <strong>/mnt/sda1/var/lib/boot2docker/profile</strong> (you may need to use sudo  when opening the file) and add the commands:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>目前国内访问github的体验, 首先http://github.com里的各种页面访问都没问题, 速度还好.
-release中的下载链接虽然是http://github.com开头,但会跳转到*.s3.amazonaws.com这个域名, 后面带了很长的参数, 貌似是一次性的只能临时下载用, 很快就会失效,
-然后只能从github.com开头的地址重新跳转取得新的实际下载链接.
-至于release的下载速度, 最快只有几十KB/s, 慢的时候可能掉到十几K甚至几K. 如果把跳转后的真实下载链接中的https手动改为http开头, 则下载速度会提高到几百K甚至更高. 怀疑是https有墙在阻碍.
-然而, release下载的稳定性并不好, 如果下载文件很大, 很容易在中途中断(http方式下载还经常在99%的进度中断), chrome浏览器无法断点续传, 因为临时下载地址会失效. 不少下载工具也无法处理好地址跳转,
-不过curl实测可以从http://github.com开头的原链接断点续传, 但又无法解决https改为http, 只能龟速下载但中断可续传.</pre>
+<pre>mkdir /home/docker/projects
+sudo mount -t vboxsf -o uid=1000,gid=50 Divio /home/docker/projects</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>采用把<strong>https</strong>换成<strong>http</strong>的方式下载boot2docker.iso文件，下载完成后，放到C:\Users\用户\.docker\machine\cache目录下。然后再点击"Docker Quickstart Terminal"快捷方式。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="执行">执行</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>在执行命令的时候,由于windows对斜杠的反人类设计,会造成很多困扰,如:
-在linux下应该为:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ ​​docker​​ ​​run​​ ​​-i​​ ​​-t​​ ​​--rm​​ ​​-v​​ ​​${PWD}:/usr/src/app​​ ​​ruby:2.6​​ ​​bash​</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>下windows下却为:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ ​​docker​​ ​​run​​ ​​-i​​ ​​-t​​ ​​--rm​​ ​​-v​​ /${PWD}:/usr/src/app​​ ​​ruby:2.6​​ ​​bash​</pre>
-</div>
+<p>Test it by stopping and restarting the Docker Machine. Once you&#8217;re back in the Docker Machine, if you run ls projects, you will see the files in <strong>D:\Projects\Divio</strong>.</p>
 </div>
 </div>
 </div>
