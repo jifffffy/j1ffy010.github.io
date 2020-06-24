@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-06-24T01:50:39+00:00</updated><id>/feed.xml</id><title type="html">Jekyll AsciiDoc Blog</title><subtitle>The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.</subtitle><entry><title type="html">How to use a directory outside C:\Users with Docker Toolbox/Docker for Windows</title><link href="/guides/2020/06/24/How-to-use-a-directory-outside-C-dir.html" rel="alternate" type="text/html" title="How to use a directory outside C:\Users with Docker Toolbox/Docker for Windows" /><published>2020-06-24T00:00:00+00:00</published><updated>2020-06-24T00:00:00+00:00</updated><id>/guides/2020/06/24/How-to-use-a-directory-outside-C-dir</id><content type="html" xml:base="/guides/2020/06/24/How-to-use-a-directory-outside-C-dir.html">&lt;div class=&quot;sect1&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-06-24T02:30:42+00:00</updated><id>/feed.xml</id><title type="html">Jekyll AsciiDoc Blog</title><subtitle>The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.</subtitle><entry><title type="html">How to use a directory outside C:\Users with Docker Toolbox/Docker for Windows</title><link href="/guides/2020/06/24/How-to-use-a-directory-outside-C-dir.html" rel="alternate" type="text/html" title="How to use a directory outside C:\Users with Docker Toolbox/Docker for Windows" /><published>2020-06-24T00:00:00+00:00</published><updated>2020-06-24T00:00:00+00:00</updated><id>/guides/2020/06/24/How-to-use-a-directory-outside-C-dir</id><content type="html" xml:base="/guides/2020/06/24/How-to-use-a-directory-outside-C-dir.html">&lt;div class=&quot;sect1&quot;&gt;
 &lt;h2 id=&quot;docker_for_windows&quot;&gt;Docker for Windows&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -140,7 +140,7 @@ release中的下载链接虽然是http://github.com开头,但会跳转到*.s3.am
 &lt;h2 id=&quot;执行&quot;&gt;执行&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;在执行命令的时候,由于windows对斜杠的反人类设计,会造成很多困扰,如:
+&lt;p&gt;在执行命令的时候,由于windows的路径问题,需要特别注意,另外在共享主机目录的时候,需要写绝对路径,如:
 在linux下应该为:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
@@ -153,7 +153,21 @@ release中的下载链接虽然是http://github.com开头,但会跳转到*.s3.am
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre&gt;$ ​​docker​​ ​​run​​ ​​-i​​ ​​-t​​ ​​--rm​​ ​​-v​​ /${PWD}:/usr/src/app​​ ​​ruby:2.6​​ ​​bash​&lt;/pre&gt;
+&lt;pre&gt;$ ​​docker​​ ​​run​​ ​​-i​​ ​​-t​​ ​​--rm​​ ​​-v​​ /c/Users/sun/test:/usr/src/app​​ ​​ruby:2.6​​ ​​bash​&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;ruby&quot;&gt;Ruby&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;由于众所周知的原因,在下载gem包的时候,需要设置国内的镜像源:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/  \
+    &amp;amp;&amp;amp; bundle config mirror.https://rubygems.org https://gems.ruby-china.com&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
