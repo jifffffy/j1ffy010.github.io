@@ -192,12 +192,12 @@ release中的下载链接虽然是http://github.com开头,但会跳转到*.s3.am
 <div class="paragraph">
 <p>执行流程：</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Creates a separate network just for the app:</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
 <p><code>Creating network "myapp_default" with the default driver</code></p>
@@ -341,6 +341,73 @@ In a process known as attaching, Compose then connects our local IO streams
 ​ web_1 | * Environment: development
 ​ web_1 | * Listening on tcp://0.0.0.0:3000
 ​ web_1 | Use Ctrl-C to stop</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="docker_生命周期">Docker 生命周期</h4>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/images/20200612/life_cycle.jpg" alt="life cycle">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="running_one_off_commands">Running One-Off Commands</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>docker-compose run</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ ​​docker-compose​​ ​​run​​ ​​--rm​​ ​​web​​ ​​echo​​ ​​'ran a different command'​
+ran a different command</pre>
+</div>
+</div>
+</li>
+<li>
+<p>docker-compose exec</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ ​​docker-compose​​ ​​exec​​ ​​web​​ ​​echo​​ ​​'ran a different command'​
+ran a different command</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="cleaning_up">Cleaning Up</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>docker-compose down</code> command stops any running containers and
+removes them along with the app’s dedicated network and volumes.</p>
+</li>
+<li>
+<p>If you just want to remove the app’s containers, there’s the
+<code>docker-compose rm</code> command for this purpose.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+As we change our Dockerfile and rebuild images, some images
+         inevitably will no longer be needed or used, yet sit there taking up
+         precious disk space. These are known as dangling images; they can
+         be removed with the <code>docker image prune</code> command.
+         There’s an entire family of prune commands to free up other unused
+         resources (for example, <code>docker container prune</code> ). There’s even a
+         single command to free up all resources in one go:
+         <code>$ docker system prune</code>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>

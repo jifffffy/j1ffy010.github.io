@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-06-24T07:34:19+00:00</updated><id>/feed.xml</id><title type="html">Jekyll AsciiDoc Blog</title><subtitle>The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.</subtitle><entry><title type="html">How to use a directory outside C:\Users with Docker Toolbox/Docker for Windows</title><link href="/guides/2020/06/24/How-to-use-a-directory-outside-C-dir.html" rel="alternate" type="text/html" title="How to use a directory outside C:\Users with Docker Toolbox/Docker for Windows" /><published>2020-06-24T00:00:00+00:00</published><updated>2020-06-24T00:00:00+00:00</updated><id>/guides/2020/06/24/How-to-use-a-directory-outside-C-dir</id><content type="html" xml:base="/guides/2020/06/24/How-to-use-a-directory-outside-C-dir.html">&lt;div class=&quot;sect1&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-06-24T08:47:36+00:00</updated><id>/feed.xml</id><title type="html">Jekyll AsciiDoc Blog</title><subtitle>The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.</subtitle><entry><title type="html">How to use a directory outside C:\Users with Docker Toolbox/Docker for Windows</title><link href="/guides/2020/06/24/How-to-use-a-directory-outside-C-dir.html" rel="alternate" type="text/html" title="How to use a directory outside C:\Users with Docker Toolbox/Docker for Windows" /><published>2020-06-24T00:00:00+00:00</published><updated>2020-06-24T00:00:00+00:00</updated><id>/guides/2020/06/24/How-to-use-a-directory-outside-C-dir</id><content type="html" xml:base="/guides/2020/06/24/How-to-use-a-directory-outside-C-dir.html">&lt;div class=&quot;sect1&quot;&gt;
 &lt;h2 id=&quot;docker_for_windows&quot;&gt;Docker for Windows&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -192,12 +192,12 @@ release中的下载链接虽然是http://github.com开头,但会跳转到*.s3.am
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;执行流程：&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
 &lt;li&gt;
 &lt;p&gt;Creates a separate network just for the app:&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;&lt;code&gt;Creating network &quot;myapp_default&quot; with the default driver&lt;/code&gt;&lt;/p&gt;
@@ -341,6 +341,73 @@ In a process known as attaching, Compose then connects our local IO streams
 ​ web_1 | * Environment: development
 ​ web_1 | * Listening on tcp://0.0.0.0:3000
 ​ web_1 | Use Ctrl-C to stop&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;docker_生命周期&quot;&gt;Docker 生命周期&lt;/h4&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;/assets/images/20200612/life_cycle.jpg&quot; alt=&quot;life cycle&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;running_one_off_commands&quot;&gt;Running One-Off Commands&lt;/h4&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;docker-compose run&lt;/p&gt;
+&lt;div class=&quot;literalblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;$ ​​docker-compose​​ ​​run​​ ​​--rm​​ ​​web​​ ​​echo​​ ​​'ran a different command'​
+ran a different command&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;docker-compose exec&lt;/p&gt;
+&lt;div class=&quot;literalblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;$ ​​docker-compose​​ ​​exec​​ ​​web​​ ​​echo​​ ​​'ran a different command'​
+ran a different command&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;cleaning_up&quot;&gt;Cleaning Up&lt;/h4&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;docker-compose down&lt;/code&gt; command stops any running containers and
+removes them along with the app’s dedicated network and volumes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you just want to remove the app’s containers, there’s the
+&lt;code&gt;docker-compose rm&lt;/code&gt; command for this purpose.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&quot;admonitionblock warning&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-warning&quot; title=&quot;Warning&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+As we change our Dockerfile and rebuild images, some images
+         inevitably will no longer be needed or used, yet sit there taking up
+         precious disk space. These are known as dangling images; they can
+         be removed with the &lt;code&gt;docker image prune&lt;/code&gt; command.
+         There’s an entire family of prune commands to free up other unused
+         resources (for example, &lt;code&gt;docker container prune&lt;/code&gt; ). There’s even a
+         single command to free up all resources in one go:
+         &lt;code&gt;$ docker system prune&lt;/code&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
