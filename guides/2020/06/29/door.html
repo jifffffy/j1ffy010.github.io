@@ -2,24 +2,24 @@
 <html>
 <head>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-    <title>Converting A Virtual Image To A Physical Machine</title>
+    <title>门磁测试</title>
     
 
     <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Jekyll AsciiDoc Blog" />
     <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Converting A Virtual Image To A Physical Machine | Jekyll AsciiDoc Blog</title>
+<title>门磁测试 | Jekyll AsciiDoc Blog</title>
 <meta name="generator" content="Jekyll v3.8.7" />
-<meta property="og:title" content="Converting A Virtual Image To A Physical Machine" />
+<meta property="og:title" content="门磁测试" />
 <meta name="author" content="Jiffy" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This tutorial shows how to convert an existing CentOS VM to a Physical machine. This tutorial covers the cloning of the VM to an unpartitioned HDD and troubleshoot some of the possible errors that you may have booting the OS on your new hardware. To illustrate this procedure I will use VMware Workstation 7 as the handler to transfer the VM installation to a physical HDD." />
-<meta property="og:description" content="This tutorial shows how to convert an existing CentOS VM to a Physical machine. This tutorial covers the cloning of the VM to an unpartitioned HDD and troubleshoot some of the possible errors that you may have booting the OS on your new hardware. To illustrate this procedure I will use VMware Workstation 7 as the handler to transfer the VM installation to a physical HDD." />
+<meta name="description" content="门磁传感器测试" />
+<meta property="og:description" content="门磁传感器测试" />
 <meta property="og:site_name" content="Jekyll AsciiDoc Blog" />
-<meta property="og:image" content="/20200529/image007.jpg" />
+<meta property="og:image" content="/zoom.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-05-29T00:00:00+00:00" />
+<meta property="article:published_time" content="2020-06-29T00:00:00+00:00" />
 <script type="application/ld+json">
-{"description":"This tutorial shows how to convert an existing CentOS VM to a Physical machine. This tutorial covers the cloning of the VM to an unpartitioned HDD and troubleshoot some of the possible errors that you may have booting the OS on your new hardware. To illustrate this procedure I will use VMware Workstation 7 as the handler to transfer the VM installation to a physical HDD.","author":{"@type":"Person","name":"Jiffy"},"@type":"BlogPosting","url":"/guides/2020/05/29/v2p.html","image":"/20200529/image007.jpg","headline":"Converting A Virtual Image To A Physical Machine","dateModified":"2020-05-29T00:00:00+00:00","datePublished":"2020-05-29T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/guides/2020/05/29/v2p.html"},"@context":"https://schema.org"}</script>
+{"description":"门磁传感器测试","author":{"@type":"Person","name":"Jiffy"},"@type":"BlogPosting","url":"/guides/2020/06/29/door.html","image":"/zoom.jpg","headline":"门磁测试","dateModified":"2020-06-29T00:00:00+00:00","datePublished":"2020-06-29T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/guides/2020/06/29/door.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -79,121 +79,140 @@
     <div class="detail">
         <div class="detailcon">
             
-            <a title="Converting A Virtual Image To A Physical Machine" href="/authors/Jiffy.html" class="detailuser">
-                <img alt="Converting A Virtual Image To A Physical Machine" src="/assets/images/users/devlopr.png">
+            <a title="门磁测试" href="/authors/Jiffy.html" class="detailuser">
+                <img alt="门磁测试" src="/assets/images/users/devlopr.png">
                 <span>
                     <font class="username">Jiffy</font>
-                    <font class="date">29 May 2020</font>
+                    <font class="date">29 Jun 2020</font>
                 </span>
             </a>
             <div class="arttag">
                 
-                <a  title="Virtual" href="/blog/tags/Virtual" class="t1">Virtual</a>
+                <a  title="test" href="/blog/tags/test" class="t1">test</a>
                 
             </div>
             <div class="detailadoc">
-                <div class="sect1">
-<h2 id="1_requirements">1.Requirements</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To perform this procedure you will need:</p>
+                <div class="sect2">
+<h3 id="门">门</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. 后开</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">操作</th>
+<th class="tableblock halign-left valign-top">信号</th>
+<th class="tableblock halign-left valign-top">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">打开前门,关闭后门</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">关闭前门</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0,0</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. 前开</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">操作</th>
+<th class="tableblock halign-left valign-top">信号</th>
+<th class="tableblock halign-left valign-top">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">打开前门</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">关闭前门</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0,0</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>VMware Workstation, VMware Server or VMware Player.</p>
-</li>
-<li>
-<p>CloneZilla ISO image.</p>
-</li>
-<li>
-<p>Unpartitioned HDD with enough space to hold your VM image.</p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="锁">锁</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. 锁</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">操作</th>
+<th class="tableblock halign-left valign-top">信号</th>
+<th class="tableblock halign-left valign-top">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">打开门锁</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">关闭门锁</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">钥匙向右旋转一点,不要拔出钥匙</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="2_preliminary_notes">2.Preliminary Notes</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This tutorial assumes basic knowledge of the cloning process and requires no previous experience on the use of Clonezilla. Make sure your OS is not using in any way the target HDD that will hold your final copy of the VM, otherwise VMware will complain about your disk been in use and CloneZilla will not perform a successful copy of the VM.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="3_vmware_configuration">3.VMware Configuration</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>First thing is to make sure your virtual CD/DVD is using your CloneZilla ISO image to boot. Next add your physical HDD as part of your existing VM by clicking the Add button.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="/assets/images/20200529/image001.jpg" alt="image001">
-</div>
-</div>
-<div class="paragraph">
-<p>Select <code>Hard Drive</code> and click <code>Next</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="/assets/images/20200529/image003.jpg" alt="image003">
-</div>
-</div>
-<div class="paragraph">
-<p>Select <code>Use physical disk (for advanced users)</code> then click <code>Next</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="/assets/images/20200529/image004.jpg" alt="image004">
-</div>
-</div>
-<div class="paragraph">
-<p>Make sure you select the correct drive that you want to use for your physical disk and select the option <code>Use entire disk</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="/assets/images/20200529/image005.jpg" alt="image005">
-</div>
-</div>
-<div class="paragraph">
-<p>Finally give a name to your configuration file then click <code>Finish</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="/assets/images/20200529/image006.jpg" alt="image006">
-</div>
-</div>
-<div class="paragraph">
-<p>Make sure your final VMware hardware list include this two elements otherwise, start all over.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="/assets/images/20200529/image007.jpg" alt="image007">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="4_another_way">4.Another way</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Copy the .vmdk virtual disk of the VM.</p>
-</li>
-<li>
-<p>Convert it from vmdk to raw format using the qemu-img tool C:\Tools\qemu-img&gt;qemu-img convert -f vmdk G:\VM\Streamer1.vmdk -O raw G:\Streamer1.raw</p>
-</li>
-<li>
-<p>Write the raw file to the physical HD (on windows system you can use Win32 Disk Imager)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The HD will now contain all partitions and data initially stored in the .vmdk disk, put and boot in the physical machine.</p>
-</div>
-</div>
+<div class="sect2">
+<h3 id="安全门">安全门</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. 保险柜门</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">操作</th>
+<th class="tableblock halign-left valign-top">信号</th>
+<th class="tableblock halign-left valign-top">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">关闭安全门</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">打开安全门</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+</tbody>
+</table>
 </div>
             </div>
         </div>
