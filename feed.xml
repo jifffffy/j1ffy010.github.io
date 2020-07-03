@@ -1,4 +1,138 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-06-29T06:23:59+00:00</updated><id>/feed.xml</id><title type="html">Jekyll AsciiDoc Blog</title><subtitle>The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.</subtitle><entry><title type="html">门磁测试</title><link href="/guides/2020/06/29/door.html" rel="alternate" type="text/html" title="门磁测试" /><published>2020-06-29T00:00:00+00:00</published><updated>2020-06-29T00:00:00+00:00</updated><id>/guides/2020/06/29/door</id><content type="html" xml:base="/guides/2020/06/29/door.html">&lt;div class=&quot;sect2&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-07-03T08:15:38+00:00</updated><id>/feed.xml</id><title type="html">Jekyll AsciiDoc Blog</title><subtitle>The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.</subtitle><entry><title type="html">The “Ops” in DevOps</title><link href="/guides/2020/07/03/Ops.html" rel="alternate" type="text/html" title="The “Ops” in DevOps" /><published>2020-07-03T00:00:00+00:00</published><updated>2020-07-03T00:00:00+00:00</updated><id>/guides/2020/07/03/Ops</id><content type="html" xml:base="/guides/2020/07/03/Ops.html">&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;the_ops_in_devops&quot;&gt;The “Ops” in DevOps&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Depending on your work environment, you may or may not be heavily involved in operations—or just Ops—which involves delivering and
+running software in production. We can break this down into a number of different areas:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;Provisioning&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configuration management&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Release management&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Monitoring and alerting&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Operating&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Although you probably have some idea of what these things mean, let’s describe
+them so that we’re on the same page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;provisioning&quot;&gt;Provisioning&lt;/h3&gt;
+&lt;div class=&quot;admonitionblock note&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-note&quot; title=&quot;Note&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+also known as &lt;strong&gt;creating stuff&lt;/strong&gt;.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Software needs computers and
+resources to run on. Ensuring there are enough computing resources available and creating them if not—is an important part of that. In fact, it’s not just
+machines or instances that we need; when deploying apps to the cloud, we may
+also need other physical or virtual infrastructure, such as:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Networks, also known as virtual private clouds (VPCs)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Network address translation (NAT) gateways&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Routers&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Firewalls&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Internet gateways&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Proxies&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Security rules&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;configuration_management&quot;&gt;Configuration management&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Once our raw infrastructure has been created, it
+typically isn’t ready to perform its true purpose in life; it has to be configured.
+For some (possibly virtual) infrastructure, such as routers or firewalls, this
+means ensuring they have the right settings or rules applied. For a server, it
+typically means installing the necessary software packages and dependencies
+needed to run an application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;release_management&quot;&gt;Release management&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Most systems need regular maintenance or continued
+development, which implies an ongoing need to deploy—or release—newer
+versions. Typically, we’d like to be able to release easily, repeatedly at any time,
+and with minimal or no impact to users of the system. This can be achieved
+through automation, good tooling, and techniques such as blue-green deploys or
+canary releases. Additionally, when things go wrong, the ability to roll back to a
+known-good version of the software can be invaluable.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;monitoring_and_alerting&quot;&gt;Monitoring and alerting&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In a perfect world, our application, once deployed,
+would perform as expected forever. In reality, things go wrong: servers fail,
+software has bugs, our assumptions don’t hold true. Rather than bury our heads
+in the sand, we proactively take steps to know the health of our software and
+how well it’s functioning. This typically involves tracking health metrics for the
+system and being alerted when things start to go wrong.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;operating&quot;&gt;Operating&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In the day-to-day running of production systems, there are some
+common things we may need to do: scaling up to handle increased load, scaling
+down to save costs, diagnosing and debugging issues, and generally, keeping the
+lights on. Smart operations teams try to automate as much as possible to
+minimize human error and free up their time so they can be proactive rather than
+fighting fires.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Adopting Docker changes the way we think about many of these areas.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Take configuration management, for example. Although tools like Chef, Puppet,
+or Ansible are extremely popular, their role in a containerized world is
+considerably diminished. With Docker, each piece of software has its
+dependencies baked into its image, isolating it from those in another container.
+This dramatically simplifies the problem. Since app-level dependencies are
+managed by the app itself, in its Dockerfile , configuring your infrastructure
+instances is largely just a case of ensuring that Docker is installed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name>Jiffy</name></author><category term="ops" /><summary type="html">Our focus as software developers is often on the development phase, with its discovery, analysis, testing, and building activities.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/zoom.jpg" /><media:content medium="image" url="/zoom.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">门磁测试</title><link href="/guides/2020/06/29/door.html" rel="alternate" type="text/html" title="门磁测试" /><published>2020-06-29T00:00:00+00:00</published><updated>2020-06-29T00:00:00+00:00</updated><id>/guides/2020/06/29/door</id><content type="html" xml:base="/guides/2020/06/29/door.html">&lt;div class=&quot;sect2&quot;&gt;
 &lt;h3 id=&quot;门&quot;&gt;门&lt;/h3&gt;
 &lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
 &lt;caption class=&quot;title&quot;&gt;Table 1. 后开&lt;/caption&gt;
@@ -259,6 +393,19 @@ release中的下载链接虽然是http://github.com开头,但会跳转到*.s3.am
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;采用把&lt;strong&gt;https&lt;/strong&gt;换成&lt;strong&gt;http&lt;/strong&gt;的方式下载boot2docker.iso文件，下载完成后，放到C:\Users\用户\.docker\machine\cache目录下。然后再点击&quot;Docker Quickstart Terminal&quot;快捷方式。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;admonitionblock note&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&quot;icon&quot;&gt;
+&lt;i class=&quot;fa icon-note&quot; title=&quot;Note&quot;&gt;&lt;/i&gt;
+&lt;/td&gt;
+&lt;td class=&quot;content&quot;&gt;
+由于网络原因,访问国外的docker镜像很长慢,甚至下载失败,因此需要设置国内镜像。方法是在docker安装目录下的start.sh脚本文件中加入&amp;#8212;&amp;#8203;engine-registry-mirror选项:
+    &lt;code&gt;&quot;${DOCKER_MACHINE}&quot; create --engine-registry-mirror=http://hub-mirror.c.163.com -d virtualbox $PROXY_ENV &quot;${VM}&quot;&lt;/code&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

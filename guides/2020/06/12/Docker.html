@@ -134,6 +134,19 @@ release中的下载链接虽然是http://github.com开头,但会跳转到*.s3.am
 <div class="paragraph">
 <p>采用把<strong>https</strong>换成<strong>http</strong>的方式下载boot2docker.iso文件，下载完成后，放到C:\Users\用户\.docker\machine\cache目录下。然后再点击"Docker Quickstart Terminal"快捷方式。</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+由于网络原因,访问国外的docker镜像很长慢,甚至下载失败,因此需要设置国内镜像。方法是在docker安装目录下的start.sh脚本文件中加入&#8212;&#8203;engine-registry-mirror选项:
+    <code>"${DOCKER_MACHINE}" create --engine-registry-mirror=http://hub-mirror.c.163.com -d virtualbox $PROXY_ENV "${VM}"</code>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -466,6 +479,8 @@ As we change our Dockerfile and rebuild images, some images
     <a href="/blog/tags/Windows Docker" class="t7">Windows Docker</a>
      
     <a href="/blog/tags/test" class="t8">test</a>
+     
+    <a href="/blog/tags/ops" class="t9">ops</a>
     
 </div>
     <div class="hotuser">
