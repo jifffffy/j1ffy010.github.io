@@ -1,0 +1,952 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Apache isis getting started</title>
+    
+
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Jekyll AsciiDoc Blog" />
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Apache isis getting started | Jekyll AsciiDoc Blog</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Apache isis getting started" />
+<meta name="author" content="Jiffy" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Apache Isis(TM) is a full-stack framework for building enterprise applications." />
+<meta property="og:description" content="Apache Isis(TM) is a full-stack framework for building enterprise applications." />
+<meta property="og:site_name" content="Jekyll AsciiDoc Blog" />
+<meta property="og:image" content="/coad-colors.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-09-27T00:00:00+00:00" />
+<script type="application/ld+json">
+{"description":"Apache Isis(TM) is a full-stack framework for building enterprise applications.","author":{"@type":"Person","name":"Jiffy"},"@type":"BlogPosting","url":"/guides/2020/09/27/Apache-isis-getting-started.html","image":"/coad-colors.png","headline":"Apache isis getting started","dateModified":"2020-09-27T00:00:00+00:00","datePublished":"2020-09-27T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/guides/2020/09/27/Apache-isis-getting-started.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <meta name="Keywords" content="">
+    <link href="/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.">
+    <meta name="author" content="Your name goes here">
+    <meta name="copyright" content="Maybe consider a Creative Commons license">
+
+    <!--<link rel="stylesheet" href="/assets/css/foundation.css">
+    <link rel="stylesheet" href="/assets/css/coderay.css">-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="/assets/css/R.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/layer.css" id="layui_layer_skinlayercss" style="">
+    <link rel="stylesheet" href="/assets/css/themes/rubygems.css">
+
+</head>
+<body id="mescroll" class="mescroll">
+<div class="c pink">
+    <div class="con head">
+        <a title="" href="" class="logo">
+            <img alt="Logo" class="pclogo" src="/assets/images/Logo.png">
+            <img alt="Logo" class="mobilelogo hide" src="/assets/images/mobile_logo.png">
+        </a>
+
+        <span class="menuebtn"></span>
+    </div>
+</div>
+<div class="c white">
+    <div class="nav show">
+        <ul>
+            
+<li><a href="/" >首页</a></li>
+
+<li><a href="/404.html" >暂无</a></li>
+
+<li><a href="/404.html" >暂无</a></li>
+
+<li><a href="/404.html" >暂无</a></li>
+
+<li><a href="/404.html" >暂无</a></li>
+
+<li><a href="/404.html" >暂无</a></li>
+
+
+        </ul>
+    </div>
+</div>
+<div id="body">
+    <section class="content-wrapper main-content clear-fix">
+        <div class="c top20">
+            <div class="con">
+                <div class="detailcontent">
+    <div class="detail">
+        <div class="detailcon">
+            
+            <a title="Apache isis getting started" href="/authors/Jiffy.html" class="detailuser">
+                <img alt="Apache isis getting started" src="/assets/images/users/devlopr.png">
+                <span>
+                    <font class="username">Jiffy</font>
+                    <font class="date">27 Sep 2020</font>
+                </span>
+            </a>
+            <div class="arttag">
+                
+                <a  title="isis java" href="/blog/tags/isis java" class="t1">isis java</a>
+                
+            </div>
+            <div class="detailadoc">
+                <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#__getting-started_introducing-the-case-study">Introducing the Case Study</a>
+<ul class="sectlevel2">
+<li><a href="#__getting-started_introducing-the-case-study_case-study-repo">The Case Study Repo</a></li>
+</ul>
+</li>
+<li><a href="#__getting-started_prereqs">Prereqs</a></li>
+<li><a href="#__getting-started_using-the-maven-archetype-to-generate-the-app">Using the maven archetype to generate the app [1.1]</a></li>
+<li><a href="#__getting-started_running-the-app">Running the app</a>
+<ul class="sectlevel2">
+<li><a href="#__getting-started_running-the-app_fixture-scripts">Fixture Scripts</a></li>
+</ul>
+</li>
+<li><a href="#__getting-started_taking-a-look-around">Taking a look around</a>
+<ul class="sectlevel2">
+<li><a href="#__getting-started_taking-a-look-around_maven-modules">Maven Modules</a></li>
+<li><a href="#__getting-started_taking-a-look-around_the-SimpleObject-entity">The <code>SimpleObject</code> entity</a></li>
+<li><a href="#__getting-started_taking-a-look-around_layout-metadata">Layout Metadata</a></li>
+<li><a href="#__getting-started_taking-a-look-around_domain-services">Domain services</a></li>
+<li><a href="#__getting-started_taking-a-look-around_tests-and-fixtures">Tests and fixtures</a></li>
+</ul>
+</li>
+<li><a href="#refactor_1_2">Refactor [1.2]</a></li>
+<li><a href="#what_weve_learnt">What we&#8217;ve learnt</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Apache Isis&#8482; is a full-stack framework for building enterprise applications.
+It&#8217;s also great for building the REST services for internet-scale apps, be they microservices or the backend of a mobile app.</p>
+</div>
+<div class="paragraph">
+<p>In this mini-book we&#8217;ll learn about the framework through an example application that demonstrates both these main use cases (as an enterprise app and as a mobile backend).
+Along the way we&#8217;ll take a few diversions to describe some of the background and philosophy of why the framework is as it is: as you&#8217;ll see, it&#8217;s quite opinionated!</p>
+</div>
+<div class="paragraph">
+<p>But for now, let&#8217;s get on with the show.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__getting-started_introducing-the-case-study">Introducing the Case Study</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In an effort to get a bit fitter I recently joined a gym, and I really enjoy attending their various classes (spinning and barbells, yeah!).
+One can book a class up to seven days in advance, and there&#8217;s limited number of places for each class so they&#8217;ll put you on the waiting list if it is already fun.
+But to book a class you need to phone up the gym; there&#8217;s no website nor mobile app.
+So this is what gave me the idea for the case study we&#8217;re going to use in this mini-book.</p>
+</div>
+<div class="paragraph">
+<p><a href="#__getting-started_introducing-the-case-study_diagram">Figure 1.</a> shows a UML class diagram for the main entities that make up our domain.</p>
+</div>
+<div id="__getting-started_introducing-the-case-study_diagram" class="imageblock">
+<div class="content">
+<a class="image" href="https://raw.githubusercontent.com/danhaywood/apache-isis-infoq-mini-book/master/src/docs/asciidoc/images/ch01/class-diagram.png"><img src="/assets/images/ch01/class-diagram.png" alt="class diagram" width="500px"></a>
+</div>
+<div class="title">Figure 1. Case study</div>
+</div>
+<div class="paragraph">
+<p>We have 7 entities, in five different modules:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>person</code> module holds the <code>Person</code> entity (for example "Billy" or "Tamsin") along with the abstract <code>PersonRole</code> entity</p>
+</li>
+<li>
+<p>The <code>customers</code> module defines the <code>GymMember</code> entity; so a <code>Person</code> with this role - "Billy", say - is a gym member.</p>
+</li>
+<li>
+<p>Similarly the <code>employees</code> module defines the <code>GymInstructor</code> entity so a <code>Person</code> with this role - "Tamsin", say - leads gym classes.</p>
+</li>
+<li>
+<p>In the <code>timetable</code> module the <code>GymClassDescription</code> entity describes the types of classes available, such as "Pilates" or "Spinning".
+The <code>GymClass</code> lists which classes normally occur, such as "Pilates @ 5pm each Wednesday, led by Tamsin".</p>
+</li>
+<li>
+<p>finally the <code>classes</code> module defines the <code>ScheduledGymClass</code> entity and also <code>Participant</code>.
+The former is an actual occurrance of a timetabled gym class, for example "Pilates on 1st March 2017, run by Bobbi".
+The latter is the <code>GymMember</code> who&#8217;s actually going to participate in one of the <code>GymClass</code>es.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>I&#8217;ve used <a href="https://en.wikipedia.org/wiki/Object_Modeling_in_Color" target="_blank" rel="noopener">Coad Colors</a> to indicate the nature of the various classes; I learnt this technique a long time ago and I still find it useful occasionally.
+<a href="#__getting-started_introducing-the-case-study_coad-colors">Figure 2.</a> shows the general direction of dependencies; following this simple rule helped me identify some missing concepts (for example <code>GymClassDescription</code> vs <code>GymClass</code>.</p>
+</div>
+<div id="__getting-started_introducing-the-case-study_coad-colors" class="imageblock">
+<div class="content">
+<a class="image" href="https://raw.githubusercontent.com/danhaywood/apache-isis-infoq-mini-book/master/src/docs/asciidoc/images/ch01/coad-colors.png"><img src="/assets/images/ch01/coad-colors.png" alt="coad colors" width="800px"></a>
+</div>
+<div class="title">Figure 2. Coad Colors</div>
+</div>
+<div class="paragraph">
+<p>In the diagram you&#8217;ll see that there&#8217;s one "loop" between classes: there are two routes from <code>ScheduledGymClass</code> to <code>GymInstructor</code>, either directly or by way of <code>GymClass</code>.
+Such loops are always worth looking at more closely to make sure that they make sense.
+In this case they do: sometimes the regular instructor who normally leads the class isn&#8217;t available and so another substitutes in for a particular scheduled gym class.</p>
+</div>
+<div class="paragraph">
+<p>As for the modules themselves, there are <em>no</em> loops between the modules.
+This will be useful: it means that we can implement each module as a Maven module, and then rely upon Maven itself to ensure that the application doesn&#8217;t become a <a href="https://en.wikipedia.org/wiki/Big_ball_of_mud" target="_blank" rel="noopener">big ball of mud</a>.
+If there were loops, then we could use the <a href="https://en.wikipedia.org/wiki/Dependency_inversion_principle">dependency inversion principle</a> to remove any cyclic dependencies.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Exploring the domain together</div>
+<div class="paragraph">
+<p>One of Apache Isis' strengths is in being able to tackle complex business domains, where neither the techies in the team nor even the busines experts start off with a complete understanding of the domain.
+Building an Apache Isis application is then a journey for the entire team, as insights and deeper concepts are uncovered along the way.</p>
+</div>
+<div class="paragraph">
+<p>I put together the above domain model by myself in an hour or so, and it&#8217;s probably in good enough shape to begin the conversation with the domain experts.
+However, I&#8217;m certain that if we were building a gym class booking system "for real" then it would change substantially as the app was developed.  [<strong><strong>TODO - double-check that the model hasn&#8217;t changed once I&#8217;ve finished the book!!!</strong></strong>]</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__getting-started_introducing-the-case-study_case-study-repo">The Case Study Repo</h3>
+<div class="paragraph">
+<p>To prevent this mini-book just being listing after listing, I&#8217;m not going to exhaustively spell out all the source code that makes up the application.
+Instead, I&#8217;ll highlight the new concepts as they arise, and then I&#8217;ll use tags in the <a href="https://github.com/danhaywood/gymclass" target="_blank" rel="noopener"><code>danhaywood/gymclass</code></a> repo (up on github) that houses the source code.</p>
+</div>
+<div class="paragraph">
+<p>This means that you can (A) check out the code at any point, and (b) you can use github&#8217;s <a href="https://github.com/danhaywood/gymclass/compare" target="_blank" rel="noopener">/compare</a> view to inspect the differences between any two tagss.</p>
+</div>
+<div class="paragraph">
+<p>Still, if you want to follow along, you will need to install some software.
+Next section looks at the prerequisites.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__getting-started_prereqs">Prereqs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Apache Isis is a Java framework, and we build with Maven.
+You&#8217;ll therefore need to install:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html" target="_blank" rel="noopener">JDK 8</a>.<br></p>
+<div class="paragraph">
+<p>Actually, Apache Isis 1.x also supports Java 7, but some of the addons/customisations we&#8217;ll be using require Java 8.</p>
+</div>
+</li>
+<li>
+<p><a href="https://maven.apache.org/download.cgi" target="_blank" rel="noopener">Maven 3.3.x</a> or higher</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll also need an IDE.
+I was an <a href="https://www.eclipse.org/" target="_blank" rel="noopener">Eclipse</a>&#8482; user for over a decade, and still have fond memories of that IDE, but I switched to <a href="https://www.jetbrains.com/idea/download" target="_blank" rel="noopener">IntelliJ</a>&#8482; (community edition) a few years ago.</p>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll find setup instructions for both these IDEs on the <a href="http://isis.apache.org/guides/dg.html#_dg_ide" target="_blank" rel="noopener">Apache Isis website</a>.
+If you&#8217;re an <a href="//http://netbeans.apache.org" target="_blank" rel="noopener">Apache NetBeans</a>&#8482; user then I&#8217;m sure you&#8217;ll have no problems also; the main requirement is good Maven support.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__getting-started_using-the-maven-archetype-to-generate-the-app">Using the maven archetype to generate the app [<a href="https://github.com/danhaywood/gymclass/tree/_1.1-as-generated-by-simpleapp-archetype" target="_blank" rel="noopener">1.1</a>]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Apache Isis provides the <a href="http://isis.apache.org/guides/ugfun.html#_ugfun_getting-started_simpleapp-archetype" target="_blank" rel="noopener">"SimpleApp" Maven archetype</a> to get you started.
+So that&#8217;s what I&#8217;ll use.</p>
+</div>
+<div class="paragraph">
+<p>In a suitable directory:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">mvn archetype:generate  \
+    -D archetypeGroupId=org.apache.isis.archetype \
+    -D archetypeArtifactId=simpleapp-archetype \
+    -D archetypeVersion=1.14.0 \
+    -D groupId=com.danhaywood.apps \
+    -D artifactId=gymclass \
+    -D version=1.0-SNAPSHOT \
+    -B
+
+cd gymclass</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>which I then push to my <a href="https://github.com/danhaywood/gymclass" target="_blank" rel="noopener"><code>danhaywood/gymclass</code></a> repo that I created on github:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">git init
+git add .
+git commit -m &quot;adds files generated by simpleapp archetype 1.14.0 ...&quot;
+git remote add origin https://github.com/danhaywood/gymclass.git
+git push -u origin master</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And I&#8217;ll tag that immediately:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">git tag _1.1-as-generated-by-simpleapp-archetype
+git push origin _1.1-as-generated-by-simpleapp-archetype</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__getting-started_running-the-app">Running the app</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Even though we&#8217;ve not made any changes, you might want to try out the app at this point.
+To pull down the code at this point, use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">git checkout _1.1-as-generated-by-simpleapp-archetype</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you go to the github website you&#8217;ll also be able to inspect the repo at this point by choosing the appropriate tag, as shown in <a href="#__getting-started_running-the-app_github-tag">Figure 3.</a>.</p>
+</div>
+<div id="__getting-started_running-the-app_github-tag" class="imageblock">
+<div class="content">
+<a class="image" href="https://raw.githubusercontent.com/danhaywood/apache-isis-infoq-mini-book/master/src/docs/asciidoc/images/ch01/github-tag.png"><img src="/assets/images/ch01/github-tag.png" alt="github tag"></a>
+</div>
+<div class="title">Figure 3. Select tag from the github website</div>
+</div>
+<div class="paragraph">
+<p>If you look at the "README" at this point you&#8217;ll see that the maven archetype lists a whole bunch of ways to build the app and then run it.
+From the command line using <code>jetty:run</code> is probably most convenient, but you&#8217;ll also see that you can even build and run the app as a Docker image!</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Build and run the application using:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">mvn clean install
+mvn -pl webapp jetty:run</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Navigate to <a href="http://localhost:8080" target="_blank" rel="noopener">localhost:8080</a> to open up the index page, as shown in
+<a href="#__getting-started_running-the-app_index-page">Figure 4.</a>.</p>
+</div>
+<div id="__getting-started_running-the-app_index-page" class="imageblock">
+<div class="content">
+<a class="image" href="https://raw.githubusercontent.com/danhaywood/apache-isis-infoq-mini-book/master/src/docs/asciidoc/images/ch01/simpleapp-index.png"><img src="/assets/images/ch01/simpleapp-index.png" alt="simpleapp index"></a>
+</div>
+<div class="title">Figure 4. Index page for the app generated by simpleapp archetype</div>
+</div>
+<div class="paragraph">
+<p>The index page for the app shows two links: "wicket/" and "swagger-ui/".
+Clicking on the "wicket/" link will take you to to a login page, where you can use <code>sven</code>/<code>pass</code> as a default user and password.</p>
+</div>
+<div class="paragraph">
+<p>From there you are at the home page and you can create, find and update <code>SimpleObject</code>s, as shown in <a href="#__getting-started_running-the-app_simple-object">Figure 5.</a>.</p>
+</div>
+<div id="__getting-started_running-the-app_simple-object" class="imageblock">
+<div class="content">
+<a class="image" href="https://raw.githubusercontent.com/danhaywood/apache-isis-infoq-mini-book/master/src/docs/asciidoc/images/ch01/simpleapp-object.png"><img src="/assets/images/ch01/simpleapp-object.png" alt="simpleapp object"></a>
+</div>
+<div class="title">Figure 5. A "Simple object"</div>
+</div>
+<div class="sect2">
+<h3 id="__getting-started_running-the-app_fixture-scripts">Fixture Scripts</h3>
+<div class="paragraph">
+<p>By default the application is configured to run against an in-memory database (HSQLDB).
+That means that each time you run up the application, you&#8217;ll have to start anew.</p>
+</div>
+<div class="paragraph">
+<p>Obviously, that would get pretty tiresome pretty quickly, so to save yourself some time you can run up a fixture, using <code>Prototyping &gt; Run Fixture Script</code>.
+This will bring up an action prompt allowing you to select the fixture to run, as shown in <a href="#__getting-started_running-the-app_fixtures">Figure 6.</a>.</p>
+</div>
+<div id="__getting-started_running-the-app_fixtures" class="imageblock">
+<div class="content">
+<a class="image" href="https://raw.githubusercontent.com/danhaywood/apache-isis-infoq-mini-book/master/src/docs/asciidoc/images/ch01/simpleapp-run-fixture-prompt.png"><img src="/assets/images/ch01/simpleapp-run-fixture-prompt.png" alt="simpleapp run fixture prompt"></a>
+</div>
+<div class="title">Figure 6. Run fixtures to set up the app into a known state</div>
+</div>
+<div class="paragraph">
+<p>Having a fixture script is a great way to define the context for exploring a particular user story/scenario.
+Later on [<strong><strong>TODO</strong></strong>] we&#8217;ll see that fixtures are also used within Apache Isis' support for writing the integration tests for those user stories.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__getting-started_taking-a-look-around">Taking a look around</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before we start refactoring the application towards our case study&#8217;s domain, let&#8217;s quickly review the source code that the archetype generates for us.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This is probably a good point to import the application into your IDE; see the Apache Isis <a href="http://isis.apache.org/guides/dg.html#_dg_ide" target="_blank" rel="noopener">developers' guide</a> for details.
+It also shows how to run the application from the IDE (rather that from the Maven command line).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="__getting-started_taking-a-look-around_maven-modules">Maven Modules</h3>
+<div class="paragraph">
+<p>The application is a multi-module Maven build, consisting of several modules:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>module-simple</code><br></p>
+<div class="paragraph">
+<p>contains the domain object model for an initial "simple" module.
+It&#8217;s in modules such as this that the main logic of the application resides.
+Module-specific tests (unit tests and integration tests) also reside here.</p>
+</div>
+</li>
+<li>
+<p><code>application</code><br></p>
+<div class="paragraph">
+<p>contains (an implementation of) the <code>AppManifest</code>, which basically describes the modules and configuration that makes up the running system.
+It also contains application-wide services and views (such as a home page/dashboard), and application-wide integration tests</p>
+</div>
+</li>
+<li>
+<p><code>webapp</code><br></p>
+<div class="paragraph">
+<p>contains the <code>web.xml</code> file and related classes to package up the application as a web app.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There is a top-level parent module for all of these modules.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__getting-started_taking-a-look-around_the-SimpleObject-entity">The <code>SimpleObject</code> entity</h3>
+<div class="paragraph">
+<p>The <code>module-simple</code> module contains a single entity, <code>SimpleObject</code>.
+As you&#8217;ve probably realised, this doesn&#8217;t represent anything in particular, it&#8217;s just meant to be a minimal class that can be easily refactored into other classes that <em>are</em> relevant to your domain.
+Indeed we&#8217;ll see this shortly.</p>
+</div>
+<div class="paragraph">
+<p>Domain objects in Apache Isis have three different "types" of members:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>properties - scalar values such as "name" or "date".
+They can also be a reference to another object.
+For example an <code>Order</code> might reference the <code>Customer</code> that placed it.</p>
+</li>
+<li>
+<p>collections - multi-valued references to other objects.
+For example an <code>Order</code> might have a collection of <code>OrderItem</code>s.</p>
+</li>
+<li>
+<p>actions - business operations that can be performed by the domain object.
+Sometimes these are just queries, sometimes these modify state (either of the target domain object or indeed any other object).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In the case of <code>SimpleObject</code> it defines two properties: <code>name</code> and <code>notes</code>:</p>
+</div>
+<div class="listingblock">
+<div class="title">SimpleObject properties</div>
+<div class="content">
+<pre>public class SimpleObject ... {
+    ...
+    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)    <i class="conum" data-value="1"></i><b>(1)</b>
+    @Property()                                                         <i class="conum" data-value="2"></i><b>(2)</b>
+    @Getter @Setter                                                     <i class="conum" data-value="3"></i><b>(3)</b>
+    @Title(prepend = "Object: ")                                        <i class="conum" data-value="4"></i><b>(4)</b>
+    private String name;
+
+    @javax.jdo.annotations.Column(allowsNull = "true", length = 4000)   <i class="conum" data-value="1"></i><b>(1)</b>
+    @Property(editing = Editing.ENABLED)                                <i class="conum" data-value="2"></i><b>(2)</b>
+    @Getter @Setter                                                     <i class="conum" data-value="3"></i><b>(3)</b>
+    private String notes;
+    ...
+}</pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>JDO annotation provides persistence metadata to the ORM (more on this below)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The <code>@Property</code> annotation defines the field as an Apache Isis property.
+In the case of <code>name</code> the property cannot be edited through the UI, whereas for <code>notes</code> that property <em>can</em> be directly edited.
+If empty (as it is for <code>name</code>) then the annotation isn&#8217;t actually required; but it is recommended in all cases anyway, for readability.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The archetype uses <a href="https://projectlombok.org/" target="_blank" rel="noopener">Project Lombok</a> to remove some boilerplate: the <code>@Getter</code> and <code>@Setter</code> annotations will automatically generate corresponding getter and setter methods.
+When building with Maven, Project Lombok hooks into the compiler and <em>Just Works&#8482;</em>.
+If using an IDE, you may need to enable the appropriate settings (see the <a href="http://isis.apache.org/guides/dg.html#_dg_ide" target="_blank" rel="noopener">developers' guide</a>).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>The <code>@Title</code> annotation is used to provide a human-readable label to identify the domain object.
+This doesn&#8217;t need to be unique, just "unique enough".</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>As <a href="#__getting-started_running-the-app_simple-object">Figure 5.</a> showed, the framework automatically renders these properties in the UI.</p>
+</div>
+<div class="paragraph">
+<p>The <code>SimpleObject</code> entity doesn&#8217;t have any collections, but it does define a couple of actions:</p>
+</div>
+<div class="listingblock">
+<div class="title">SimpleObject actions</div>
+<div class="content">
+<pre>public class SimpleObject ... {
+    ...
+    @Action(semantics = SemanticsOf.IDEMPOTENT)                         <i class="conum" data-value="1"></i><b>(1)</b>
+    public SimpleObject updateName(                                     <i class="conum" data-value="2"></i><b>(2)</b>
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Name")
+            final String name) {
+        setName(name);
+        return this;
+    }
+
+    @Action(semantics = SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE)        <i class="conum" data-value="1"></i><b>(1)</b>
+    public void delete() {                                              <i class="conum" data-value="2"></i><b>(2)</b>
+        final String title = titleService.titleOf(this);
+        messageService.informUser(String.format("'%s' deleted", title));<i class="conum" data-value="3"></i><b>(3)</b>
+        repositoryService.remove(this);                                 <i class="conum" data-value="4"></i><b>(4)</b>
+    }
+    ...
+}</pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The <code>@Action</code> annotation indicates that these public methods are treated as actions.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Must have <code>public</code> visibility.
+The object returned (if any) indicates what the framework should render next (often the same object)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Calls injected <code>TitleService</code> domain service (provided by the framework) to display a message (shown as a "toast" popup)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Calls injected <code>RepositoryService</code> domain service (provided by the framework) to actually delete this domain object from the database.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Again in <a href="#__getting-started_running-the-app_simple-object">Figure 5.</a> you&#8217;ll see that "changeName" and "delete" both appear as buttons in the UI.</p>
+</div>
+<div class="paragraph">
+<p>Actions are really, really important; ultimately they are what makes your application more than a simple <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete" target="_blank" rel="noopener">CRUD</a> app.
+It&#8217;s quite common for actions to delegate to injected domain services, provided either by the framework (as is the case here) or by domain services defined by the application itself.
+We&#8217;ll see an example of the latter in a moment.</p>
+</div>
+<div class="paragraph">
+<p>If you take a look at <code>SimpleObject</code> class definition you&#8217;ll see a bunch of <a href="https://db.apache.org/jdo/" target="_blank" rel="noopener">JDO</a> annotations; these are used by the ORM (<a href="http://www.datanucleus.org" target="_blank" rel="noopener">DataNucleus</a>) to map the domain object to the database.
+JDO is admittedly less well known than JPA, but is just as capable (perhaps even more so); it&#8217;s supported NoSQL as well as regular RDBMS from the very beginning.
+In fact, DataNucleus implements both the JDO and <a href="https://en.wikipedia.org/wiki/Java_Persistence_API" target="_blank" rel="noopener">JPA</a> APIs (though at the time of writing Apache Isis only supports entities annotated with JDO).
+The <code>SimpleObject</code> class definition is also annotated with the framework&#8217;s own <code>@DomainObject</code> annotation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__getting-started_taking-a-look-around_layout-metadata">Layout Metadata</h3>
+<div class="paragraph">
+<p>A good way to think about domain objects in Apache Isis are as regular pojos with additional metadata.
+This metadata is often expressed in terms of annotations, which pertain either to the domain layer (eg <code>@Property(editing = &#8230;&#8203;)</code> and <code>@Action#semantics=&#8230;&#8203;)</code>, or which relate to mapping the domain object to the persistence layer (the JDO annotations such as <code>@PersistenceCapable</code> or <code>@Column</code>.
+In addition, metadata can be provided which relates to the presentation layer.</p>
+</div>
+<div class="paragraph">
+<p>This presentation metadata can also be provided using annotations; for example there are <code>@PropertyLayout</code>, <code>@CollectionLayout</code>, <code>@ActionLayout</code> and <code>@DomainObjectLayout</code> annotations that you can use.
+However it&#8217;s more common and powerful to provide such metadata instead using an associated <code>.layout.xml</code> file; you can modify the file and recompile; the framework will then automatically re-render the domain object.
+(In fact, the archetype even provides some gradle files which can be used to do automatic reloading of the web browser for even faster feedback).</p>
+</div>
+<div class="paragraph">
+<p>Sitting alongside the <code>SimpleObject</code> class definition you&#8217;ll therefore find the <code>SimpleObject.layout.xml</code> file.
+This uses <code>&lt;property&gt;</code>, <code>&lt;collection&gt;</code> and <code>&lt;action&gt;</code> elements to reference the corresponding members of the domain object, these are organized using <code>&lt;row&gt;</code>, <code>&lt;col&gt;</code>, <code>&lt;tabGroup&gt;</code>, <code>&lt;tab&gt;</code> and <code>&lt;fieldset&gt;</code>.
+The organization of columns and rows is modelled directly after <a href="http://getbootstrap.com/" target="_blank" rel="noopener">Bootstrap3</a>, so should be easy to learn (there are always 12 <code>&lt;col&gt;</code>s per <code>&lt;row&gt;</code>, for example).</p>
+</div>
+<div class="paragraph">
+<p>Earlier on I mentioned that every domain object has a title which is used as a label for the end-user to distinguish objects.
+Alongside the title the app also renders an icon, as further hint as to the type of object they is being displayed.
+The icon used also sits alongside the <code>SimpleObject</code>, namely <code>SimpleObject.png</code>.
+It can be quite good fun selecting an appropriate icon (I tend to use <a href="www.icons8.com" target="_blank" rel="noopener">Icons8</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__getting-started_taking-a-look-around_domain-services">Domain services</h3>
+<div class="paragraph">
+<p>So much for the <code>SimpleObject</code> entity.
+The framework also generates a couple of domain services: <code>SimpleObjectRepository</code> and <code>SimpleObjectMenu</code>.
+These are (in this case) singletons that are instantiated automatically by the framework and injected everywhere they are required - into other domain services, into entities, whatever.</p>
+</div>
+<div class="paragraph">
+<p>The <code>SimpleObjectRepository</code> is an implementation of the <a href="https://martinfowler.com/eaaCatalog/repository.html" target="_blank" rel="noopener">Repository</a> pattern; it in turn delegates to the framework&#8217;s own more generic <code>RepositoryService</code> that is a facade over the ORM&#8217;s JDO API:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@DomainService</span>(                                                         <i class="conum" data-value="1"></i><b>(1)</b>
+         nature = NatureOfService.DOMAIN, ...                           <i class="conum" data-value="2"></i><b>(2)</b>
+)
+<span class="directive">public</span> <span class="type">class</span> <span class="class">SimpleObjectRepository</span> {
+    ...
+    public <span class="predefined-type">List</span>&lt;SimpleObject&gt; listAll() { ... }
+    <span class="directive">public</span> <span class="predefined-type">List</span>&lt;SimpleObject&gt; findByName(<span class="directive">final</span> <span class="predefined-type">String</span> name) { ... }
+    <span class="directive">public</span> SimpleObject create(<span class="directive">final</span> <span class="predefined-type">String</span> name) { ... }
+    ...
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Used by the framework to discover the services (on the classpath), and provides additional semantics about the domain service.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Indicates that the service is <em>not</em> to be rendered in the UI, it is intended to be called programmatically by domain objects only</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>It&#8217;s quite common to also have repository services double up as factories, hence the service also defines a "create" method here too</p>
+</div>
+<div class="paragraph">
+<p>The <code>SimpleObjectMenu</code> domain service is, at first glance, quite similar to the <code>SimpleObjectRepository</code>; it also defines the same three actions.
+However, the menu will be rendered in the UI, by virtue of the <code>@DomainService(nature=NatureOfService.VIEW_MENU_ONLY)</code> annotation.
+The supporting <code>@DomainServiceLayout</code> defines the label to use.</p>
+</div>
+<div class="paragraph">
+<p>Although the archetype defines <code>SimpleObjectMenu</code> and <code>SimpleObjectRepository</code> as being very similar, in a real-world app you may well want to organize your application menus completely differently to the way in which the repository services are defined.
+Having two services provides for this separation of concerns, letting them evolve independently of each other.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__getting-started_taking-a-look-around_tests-and-fixtures">Tests and fixtures</h3>
+<div class="paragraph">
+<p>Finally, the archetype provides a whole bunch of tests and fixtures.
+We&#8217;ll end up refactoring some of this stuff and just deleting other stuff that we don&#8217;t need.
+Let&#8217;s not get distracted by those classes for now.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">What&#8217;s missing?</div>
+<div class="paragraph">
+<p>You may have noticed that there was no discussion of <code>SimpleObjectController</code> or <code>SimpleObject.jsp</code> views.
+That&#8217;s because there aren&#8217;t any!
+Apache Isis <em>is</em> a model-view-controller framework, however as the developer you only write the model - the domain objects - while the view and controller are entirely generics, provided by the framework itself.
+To be fair, the <code>.layout.xml</code> is a view of sorts, but also it is optional: the framework will render the domain object even without this file.</p>
+</div>
+<div class="paragraph">
+<p>Hopefully it is obvious that not having to write this UI layer has big benefits when it comes to productivity.
+It also forces the developer and domain expert to focus on the stuff that really matters: the underlying domain.</p>
+</div>
+<div class="paragraph">
+<p>And here&#8217;s another benefit: since the developer doesn&#8217;t (ie can&#8217;t) write the presentation layer code, it means that business logic doesn&#8217;t leak into the presentation layer: the framework in a sense puts up a "firewall" between the presentation and domain layers, thereby ensuring a proper separation of concerns.</p>
+</div>
+<div class="paragraph">
+<p>There&#8217;s a name for this style of architecture: the <a href="https://en.wikipedia.org/wiki/Naked_objects" target="_blank" rel="noopener">naked objects</a> pattern.
+You can learn more about the philosophy and implications of the pattern in the <a href="http://downloads.nakedobjects.net/resources/Pawson%20thesis.pdf">PhD thesis</a> of Richard Pawson (who named and popularized the pattern).
+Fun fact: the external examiner for Richard&#8217;s thesis was <a href="https://en.wikipedia.org/wiki/Trygve_Reenskaug" target="_blank" rel="noopener">Trygve Reenskaug</a>, who formulated the <a href="https://heim.ifi.uio.no/~trygver/2003/javazone-jaoo/MVC_pattern.pdf" target="_blank" rel="noopener">MVC</a> pattern.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="refactor_1_2">Refactor [<a href="https://github.com/danhaywood/gymclass/tree/_1.2-simple-module-refactored-to-person-module" target="_blank" rel="noopener">1.2</a>]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As we surveyed <a href="#__getting-started_taking-a-look-around">above</a>, the archetype gives us a single module called <code>simple</code>, with a single domain class called <code>SimpleObject</code>.
+As it happens, the structure of that entity is quite similar to the <code>Person</code> entity that we need in the <code>persons</code> module, so I decided to just do a little refactoring:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>renamed <code>module-simple</code> directory to <code>module-persons</code></p>
+</li>
+<li>
+<p>renamed <code>&lt;artifactId&gt;gymclass-module-classes&lt;/artifactId&gt;</code> to <code>&lt;artifactId&gt;gymclass-module-persons&lt;/artifactId&gt;</code> and adjusted module references</p>
+</li>
+<li>
+<p>using the IDE, renamed <code>domainapp.modules.timetable</code> to package <code>domainapp.modules.persons</code></p>
+</li>
+<li>
+<p>fixed up the fully-qualified class name in the JDOQL query fpr <code>SimpleObject</code> (the IDE incorrectly changed this string, but running the tests flagged the issue)</p>
+</li>
+<li>
+<p>renamed some classes called <code>SimpleModuleXxx</code> to <code>PersonModuleXxx</code> (we&#8217;ll learn about how Apache Isis defines modules later on [<strong><strong>TODO - fix ref</strong></strong>]).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Without thinking too hard about it, I then renamed the <code>SimpleObject</code> entity, along with associated tests/fixtures created by the archetype:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>renamed <code>SimpleObject</code>, <code>SimpleObjectTest</code>, <code>SimpleObjectData</code>, <code>SimpleObjectMenu</code>, <code>SimpleObjectMenuGlue</code>, <code>SimpleObjectRepository</code> to corresponding <code>Person&#8230;&#8203;</code> classes</p>
+</li>
+<li>
+<p>fixed the JDOQL for <code>Person</code>; there&#8217;s also a delete statement in <code>PersonModuleTearDown</code> (one of our fixture scripts) that needs attention</p>
+</li>
+<li>
+<p>changed the DB schema for <code>Person</code> from "simple" to "persons"</p>
+</li>
+<li>
+<p>updated <code>persistence.xml</code> (used by the ORM that Apache Isis' uses, <a href="//www.datanucleus.org" target="_blank" rel="noopener">DataNucleus</a>) to specify "gymclass-persons" as the name of this persistence unit</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Also some cosmetics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>each domain class rendered by the framework optionally has a <code>.layout.xml</code> file which provides layout hints to describe the positioning of the properties, collections and actions that make up each domain object.
+So I renamed <code>SimpleObject.layout.xml</code> to <code>Person.layout.xml</code> file</p>
+</li>
+<li>
+<p>also, each domain class can have an icon.
+I deleted <code>SimpleObject.png</code> and replaced it with a suitable icon downloaded from <a href="http://icons8.com" target="_blank" rel="noopener">icons8</a> website</p>
+</li>
+<li>
+<p>renamed `PersonMenu&#8217;s name to "Persons" (from "Simple Objects").</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And finally there were some application-level changes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>I searched for "SimpleApp" and "Simple App", and renamed to "GymClass"</p>
+</li>
+<li>
+<p>I fixed some BDD (cucumber) feature files and bindings<br></p>
+<div class="paragraph">
+<p>A little bit of care is needed here because if these fail, then they don&#8217;t break the build, instead the cucumber report (<code>application/target/cucumber-reports/overview-features.html</code>) shows up as incomplete.
+We&#8217;ll look at BDD in a later chapter [<strong><strong>TODO</strong></strong>].</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can check this version of the app out using:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">git checkout _1.2-simple-module-refactored-to-person-module</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For the meantime, <a href="#__getting-started_placeholders_home-page">Figure 7.</a> shows the app as it currently stands.</p>
+</div>
+<div id="__getting-started_placeholders_home-page" class="imageblock">
+<div class="content">
+<a class="image" href="https://raw.githubusercontent.com/danhaywood/apache-isis-infoq-mini-book/master/src/docs/asciidoc/images/ch01/gymclass-with-person-module.png"><img src="/assets/images/ch01/gymclass-with-person-module.png" alt="gymclass with person module"></a>
+</div>
+<div class="title">Figure 7. Index page for the app generated by simpleapp archetype</div>
+</div>
+<div class="paragraph">
+<p>Use of superclass vs subclass layouts.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="what_weve_learnt">What we&#8217;ve learnt</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this chapter we&#8217;ve seen how to use Apache Isis' maven archetype to bootstrap the development of a new application, and what the classes and files that are generated.
+We learnt how to load that app into an IDE, and how to run the app either from the IDE or from the Maven command line.</p>
+</div>
+<div class="paragraph">
+<p>We&#8217;ve also introduced our case study, and did some some refactoring of our initial code to move it into that general direction.</p>
+</div>
+<div class="paragraph">
+<p>In the next chapter we&#8217;ll [<strong><strong>TODO - update once written</strong></strong>].</p>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+    </div>
+    <div class="comment" id="Comment">
+        <div class="recomment">
+            <textarea id="TBComment" class="colorgray">期待你的论...</textarea>
+            <span class="btn right right" onclick="SubmitCommentByArt(3317370)">评论</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <script>
+        var gitalk  = new Gitalk ({
+            id: window.location.pathname,   // Ensure uniqueness and length less than 50
+            clientID: 'e6a309ad3bd8766be265',
+            clientSecret: '00c1c086d60c9e31d0276f688dde7717d5f79a24',
+            repo: 'sunyuyangg555.github.io',
+            owner: 'sunyuyangg555',
+            admin: ['sunyuyangg555'],
+            distractionFreeMode: false  // Facebook-like distraction free mode
+        });
+        gitalk.render('Comment')
+    </script>
+</div>
+
+                <div class="rightarea">
+    <a  target="_blank" title="联系" class="submission" href="https://github.com/sunyuyangg555/">联系我</a>
+    <div class="hottag">
+    <h2>类别<a title="类别" href="/categories_all.html">更多&gt;&gt;</a></h2>
+     
+    <a href="/blog/categories/guides" class="t1">guides</a>
+     
+    <a href="/blog/categories/test" class="t2">test</a>
+    
+</div>
+    <div class="hottag">
+    <h2>标签<a title="标签库" href="/tags_all.html">更多&gt;&gt;</a></h2>
+     
+    <a href="/blog/tags/java" class="t1">java</a>
+     
+    <a href="/blog/tags/sleep" class="t2">sleep</a>
+     
+    <a href="/blog/tags/Virtual" class="t3">Virtual</a>
+     
+    <a href="/blog/tags/Test" class="t4">Test</a>
+     
+    <a href="/blog/tags/Windows Docker Rails Ruby" class="t5">Windows Docker Rails Ruby</a>
+     
+    <a href="/blog/tags/Windows Unix" class="t6">Windows Unix</a>
+     
+    <a href="/blog/tags/Windows Docker" class="t7">Windows Docker</a>
+     
+    <a href="/blog/tags/test" class="t8">test</a>
+     
+    <a href="/blog/tags/ops" class="t9">ops</a>
+     
+    <a href="/blog/tags/gho vmdk" class="t10">gho vmdk</a>
+    
+</div>
+    <div class="hotuser">
+    <h2>作者</h2>
+    <ul>
+        
+        <li>
+            <a  href="/authors/Jiffy.html" title="Jiffy">
+                <img alt="Jiffy" src="/assets/images/users/devlopr.png">
+                <span>
+                    <font class="username">Jiffy</font>
+                    <font class="userdes">Java, Ruby, Devops, Linux</font>
+                </span>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+</div>
+
+
+            </div>
+        </div>
+        <ul class="toolbtn">
+            <!--<li class="toolsubmi"><a title="投稿"></a></li>-->
+            <li class="toup hide" title="滑到顶部"></li>
+        </ul>
+    </section>
+</div>
+
+<span id="Share_Title" class="hide"></span>
+
+<span id="Share_Desc" class="hide"></span>
+
+<span id="Share_ImgUrl" class="hide"></span>
+
+<div class="c top60">
+    <div class="con bottominfo">
+        <ul class="bottomnav">
+            
+            <li><a href="/About.html" >关于我们</a></li>
+            
+            <li><a href="/ContactUs.html" >联系我们</a></li>
+            
+            <li><a href="/Helper.html" >使用帮助</a></li>
+            
+            <li><a href="/UserProtocol.html" >用户协议</a></li>
+            
+            <li><a href="/Complaint.html" >投诉建议</a></li>
+            
+        </ul>
+
+        <div class="firlink">
+            <span>友情链接：</span>
+            
+            <a href="http://www.github.com/">github</a>
+            
+        </div>
+        <span class="icp"></span>
+        <span class="address"></span>
+    </div>
+</div>
+
+<script src="/assets/js/vendor/jquery.js"></script>
+<!--<script src="/assets/js/jquery-1.11.1.min.js"></script>-->
+<script src="/assets/js/foundation.min.js"></script>
+<script src="/assets/js/layer.js"></script>
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/jweixin-1.2.0.js"></script>
+<script src="/assets/js/vendor/modernizr.js"></script>
+<script src="/assets/js/toc.js"></script>
+<script>
+    $(document).foundation();
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
+</script>
+</body>
+</html>
