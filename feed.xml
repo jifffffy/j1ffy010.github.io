@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-11-26T00:47:13+00:00</updated><id>/feed.xml</id><title type="html">Jekyll AsciiDoc Blog</title><subtitle>The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.</subtitle><entry><title type="html">Apache isis getting started</title><link href="/guides/2020/09/27/Apache-isis-getting-started.html" rel="alternate" type="text/html" title="Apache isis getting started" /><published>2020-09-27T00:00:00+00:00</published><updated>2020-09-27T00:00:00+00:00</updated><id>/guides/2020/09/27/Apache-isis-getting-started</id><content type="html" xml:base="/guides/2020/09/27/Apache-isis-getting-started.html">&lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-01-12T01:41:57+00:00</updated><id>/feed.xml</id><title type="html">Jekyll AsciiDoc Blog</title><subtitle>The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.</subtitle><entry><title type="html">Apache isis getting started</title><link href="/guides/2020/09/27/Apache-isis-getting-started.html" rel="alternate" type="text/html" title="Apache isis getting started" /><published>2020-09-27T00:00:00+00:00</published><updated>2020-09-27T00:00:00+00:00</updated><id>/guides/2020/09/27/Apache-isis-getting-started</id><content type="html" xml:base="/guides/2020/09/27/Apache-isis-getting-started.html">&lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
 &lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
 &lt;ul class=&quot;sectlevel1&quot;&gt;
 &lt;li&gt;&lt;a href=&quot;#__getting-started_introducing-the-case-study&quot;&gt;Introducing the Case Study&lt;/a&gt;
@@ -718,7 +718,100 @@ We learnt how to load that app into an IDE, and how to run the app either from t
 &lt;p&gt;In the next chapter we&amp;#8217;ll [&lt;strong&gt;&lt;strong&gt;TODO - update once written&lt;/strong&gt;&lt;/strong&gt;].&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</content><author><name>Jiffy</name></author><category term="isis java" /><summary type="html">Apache Isis(TM) is a full-stack framework for building enterprise applications.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/isis/ch01/class-diagram.png" /><media:content medium="image" url="/isis/ch01/class-diagram.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How to change a Ghost “.gho” image file to a “.VMDK” file for use in VMWare</title><link href="/guides/2020/07/14/gho2vmdk.html" rel="alternate" type="text/html" title="How to change a Ghost &quot;.gho&quot; image file to a &quot;.VMDK&quot; file for use in VMWare" /><published>2020-07-14T00:00:00+00:00</published><updated>2020-07-14T00:00:00+00:00</updated><id>/guides/2020/07/14/gho2vmdk</id><content type="html" xml:base="/guides/2020/07/14/gho2vmdk.html">&lt;div class=&quot;sect2&quot;&gt;
+&lt;/div&gt;</content><author><name>Jiffy</name></author><category term="isis java" /><summary type="html">Apache Isis(TM) is a full-stack framework for building enterprise applications.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/isis/ch01/class-diagram.png" /><media:content medium="image" url="/isis/ch01/class-diagram.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SDKMAN - best JVM manager</title><link href="/2020/08/06/sdkman.html" rel="alternate" type="text/html" title="SDKMAN - best JVM manager" /><published>2020-08-06T00:00:00+00:00</published><updated>2020-08-06T00:00:00+00:00</updated><id>/2020/08/06/sdkman</id><content type="html" xml:base="/2020/08/06/sdkman.html">&lt;h2 id=&quot;jvm-ecosystem&quot;&gt;JVM ecosystem&lt;/h2&gt;
+&lt;p&gt;When you are dealing with Big Data tools, then surely you need to use JVM of some sort. Installation of the JVM on a Linux machine is a straightforward process. Just install, export JAVA_HOME, and you are good to go.&lt;/p&gt;
+
+&lt;p&gt;Technically it is true, but what if you need to manage more Java versions at once? Or maybe you need to install additional JVM languages or tools. Add to this a fresh virtual machine for each new PoC (Proof of Concept) of the new project, and you can see where I’m going.&lt;/p&gt;
+
+&lt;p&gt;For this issue, I present a great solution - &lt;a href=&quot;https://sdkman.io/&quot;&gt;SDKMAN&lt;/a&gt;. It is a tool for managing JDK and other JVM tools and languages.&lt;/p&gt;
+
+&lt;h2 id=&quot;sdkman-instalation&quot;&gt;SDKMAN Instalation&lt;/h2&gt;
+
+&lt;p&gt;To install SDKMAN just type in the terminal:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://get.sdkman.io&quot;&lt;/span&gt; | bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;After that open new shell or just run &lt;code class=&quot;highlighter-rouge&quot;&gt;source ~/.bashrc&lt;/code&gt;. It is that simple!&lt;/p&gt;
+
+&lt;h2 id=&quot;installing-jdks&quot;&gt;Installing JDKs&lt;/h2&gt;
+
+&lt;p&gt;Now let’s install JDK 8 and JDK 11. For starters lets type:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sdk list java
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You should see a similar table. In this case, I trimmed the table to be smaller to fit on the page. In reality, there are many more versions of JDK to choose from.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;================================================================================&lt;/span&gt;
+Available Java Versions
+&lt;span class=&quot;o&quot;&gt;================================================================================&lt;/span&gt;
+ Vendor        | Use | Version      | Dist    | Status     | Identifier
+&lt;span class=&quot;nt&quot;&gt;--------------------------------------------------------------------------------&lt;/span&gt;
+ AdoptOpenJDK  |     | 14.0.2.j9    | adpt    |            | 14.0.2.j9-adpt      
+               |     | 14.0.2.hs    | adpt    |            | 14.0.2.hs-adpt      
+               |     | 13.0.2.j9    | adpt    |            | 13.0.2.j9-adpt      
+               |     | 13.0.2.hs    | adpt    |            | 13.0.2.hs-adpt      
+               |     | 12.0.2.j9    | adpt    |            | 12.0.2.j9-adpt      
+               |     | 12.0.2.hs    | adpt    |            | 12.0.2.hs-adpt      
+               | &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; | 11.0.8.j9    | adpt    |            | 11.0.8.j9-adpt      
+               |     | 11.0.8.hs    | adpt    |            | 11.0.8.hs-adpt      
+               |     | 8.0.265.j9   | adpt    |            | 8.0.265.j9-adpt     
+               |     | 8.0.265.hs   | adpt    |            | 8.0.265.hs-adpt     
+               |     | 8.0.252.j9   | adpt    |            | 8.0.252.j9-adpt     
+ Amazon        |     | 11.0.8       | amzn    |            | 11.0.8-amzn         
+               |     | 8.0.265      | amzn    |            | 8.0.265-amzn        
+ Azul Zulu     |     | 14.0.2       | zulu    |            | 14.0.2-zulu
+&lt;span class=&quot;o&quot;&gt;================================================================================&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I recommend installing JVM from AdoptOpenJDK. Just type (the last part is taken from column &lt;em&gt;Identifier&lt;/em&gt;):&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sdk &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;java 8.0.265.hs-adpt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;And for JDK 11 type:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sdk &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;java 11.0.8.hs-adpt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;managing-jdks&quot;&gt;Managing JDKs&lt;/h2&gt;
+
+&lt;p&gt;Let’s see installed versions using: &lt;code class=&quot;highlighter-rouge&quot;&gt;sdk list java | grep installed&lt;/code&gt; . The &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt; means a version in use.
+We can change the selected version by using following command:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sdk use java &amp;lt;tag&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;where &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;tag&amp;gt;&lt;/code&gt; is a version identifier (from the output of &lt;code class=&quot;highlighter-rouge&quot;&gt;sdk list java&lt;/code&gt;) like &lt;code class=&quot;highlighter-rouge&quot;&gt;8.0.265.hs-adpt&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;But &lt;code class=&quot;highlighter-rouge&quot;&gt;use&lt;/code&gt; changes only the JVM for the current shell. If we want to make a global change, type:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sdk default java &amp;lt;tag&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Let’s try this:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sdk default java 8.0.265.hs-adpt
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$JAVA_HOME&lt;/span&gt;
+java &lt;span class=&quot;nt&quot;&gt;-version&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;As we can see, it easy to change the JVM version. &lt;em&gt;Cool!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;installing-scala-and-sbt&quot;&gt;Installing Scala and sbt&lt;/h2&gt;
+
+&lt;p&gt;Let’s say you are using Apache Spark or Apache Flink for your Big Data project. For this, you may use Scala, a great mix of a functional and object-oriented language. The standard Scala build tool is the &lt;em&gt;sbt&lt;/em&gt; (like Maven or Gradle). If we want to install them, just use the SDKMAN!&lt;/p&gt;
+
+&lt;p&gt;Let’s see available Scala and sbt versions:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sdk list scala
+sdk list sbt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;We can install as many Scala and sbt versions as we like and change them as we did with the JDKs.
+So let’s install Scala 2.11 and 2.13 and newest sbt.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sdk &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;scala 2.13.3
+sdk &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;scala 2.11.12
+sdk &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;sbt 1.3.13
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And that is it! With a single tool, we can see what is available, we can install what we need and even easily swap the versions. Such a great tool!&lt;/p&gt;
+
+&lt;h2 id=&quot;check-out-sdkman-site&quot;&gt;Check out SDKMAN site&lt;/h2&gt;
+
+&lt;p&gt;Go to &lt;a href=&quot;https://sdkman.io/&quot;&gt;sdkman.io/&lt;/a&gt; and see what other &lt;a href=&quot;https://sdkman.io/sdks&quot;&gt;SDKs&lt;/a&gt; and &lt;a href=&quot;https://sdkman.io/jdks&quot;&gt;JDKs&lt;/a&gt; you can download.&lt;/p&gt;</content><author><name></name></author><summary type="html">JVM ecosystem When you are dealing with Big Data tools, then surely you need to use JVM of some sort. Installation of the JVM on a Linux machine is a straightforward process. Just install, export JAVA_HOME, and you are good to go.</summary></entry><entry><title type="html">How to change a Ghost “.gho” image file to a “.VMDK” file for use in VMWare</title><link href="/guides/2020/07/14/gho2vmdk.html" rel="alternate" type="text/html" title="How to change a Ghost &quot;.gho&quot; image file to a &quot;.VMDK&quot; file for use in VMWare" /><published>2020-07-14T00:00:00+00:00</published><updated>2020-07-14T00:00:00+00:00</updated><id>/guides/2020/07/14/gho2vmdk</id><content type="html" xml:base="/guides/2020/07/14/gho2vmdk.html">&lt;div class=&quot;sect2&quot;&gt;
 &lt;h3 id=&quot;answer&quot;&gt;Answer&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;You can change a .gho file to a .VMDK file using the DOS version of the ghost.exe, the Linux version of ghost.exe or ghost32.exe.
@@ -2156,106 +2249,4 @@ As we change our Dockerfile and rebuild images, some images
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;一组测试用里的执行框架；一种组织测试用例的方法。在测试包里，测试用例可以组合起来创造出独特的测试条件。&lt;/p&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>Jiffy</name></author><category term="Test" /><summary type="html">测试术语</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/zoom.jpg" /><media:content medium="image" url="/zoom.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Converting A Virtual Image To A Physical Machine</title><link href="/guides/2020/05/29/v2p.html" rel="alternate" type="text/html" title="Converting A Virtual Image To A Physical Machine" /><published>2020-05-29T00:00:00+00:00</published><updated>2020-05-29T00:00:00+00:00</updated><id>/guides/2020/05/29/v2p</id><content type="html" xml:base="/guides/2020/05/29/v2p.html">&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;1_requirements&quot;&gt;1.Requirements&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;To perform this procedure you will need:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;VMware Workstation, VMware Server or VMware Player.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;CloneZilla ISO image.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Unpartitioned HDD with enough space to hold your VM image.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;2_preliminary_notes&quot;&gt;2.Preliminary Notes&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;This tutorial assumes basic knowledge of the cloning process and requires no previous experience on the use of Clonezilla. Make sure your OS is not using in any way the target HDD that will hold your final copy of the VM, otherwise VMware will complain about your disk been in use and CloneZilla will not perform a successful copy of the VM.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;3_vmware_configuration&quot;&gt;3.VMware Configuration&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;First thing is to make sure your virtual CD/DVD is using your CloneZilla ISO image to boot. Next add your physical HDD as part of your existing VM by clicking the Add button.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;imageblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/assets/images/20200529/image001.jpg&quot; alt=&quot;image001&quot;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Select &lt;code&gt;Hard Drive&lt;/code&gt; and click &lt;code&gt;Next&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;imageblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/assets/images/20200529/image003.jpg&quot; alt=&quot;image003&quot;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Select &lt;code&gt;Use physical disk (for advanced users)&lt;/code&gt; then click &lt;code&gt;Next&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;imageblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/assets/images/20200529/image004.jpg&quot; alt=&quot;image004&quot;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Make sure you select the correct drive that you want to use for your physical disk and select the option &lt;code&gt;Use entire disk&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;imageblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/assets/images/20200529/image005.jpg&quot; alt=&quot;image005&quot;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Finally give a name to your configuration file then click &lt;code&gt;Finish&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;imageblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/assets/images/20200529/image006.jpg&quot; alt=&quot;image006&quot;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Make sure your final VMware hardware list include this two elements otherwise, start all over.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;imageblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/assets/images/20200529/image007.jpg&quot; alt=&quot;image007&quot;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;4_another_way&quot;&gt;4.Another way&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Copy the .vmdk virtual disk of the VM.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Convert it from vmdk to raw format using the qemu-img tool C:\Tools\qemu-img&amp;gt;qemu-img convert -f vmdk G:\VM\Streamer1.vmdk -O raw G:\Streamer1.raw&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Write the raw file to the physical HD (on windows system you can use Win32 Disk Imager)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;The HD will now contain all partitions and data initially stored in the .vmdk disk, put and boot in the physical machine.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content><author><name>Jiffy</name></author><category term="Virtual" /><summary type="html">This tutorial shows how to convert an existing CentOS VM to a Physical machine. This tutorial covers the cloning of the VM to an unpartitioned HDD and troubleshoot some of the possible errors that you may have booting the OS on your new hardware. To illustrate this procedure I will use VMware Workstation 7 as the handler to transfer the VM installation to a physical HDD.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/20200529/image007.jpg" /><media:content medium="image" url="/20200529/image007.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;/table&gt;</content><author><name>Jiffy</name></author><category term="Test" /><summary type="html">测试术语</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/zoom.jpg" /><media:content medium="image" url="/zoom.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
