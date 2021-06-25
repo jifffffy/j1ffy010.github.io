@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-06-25T08:22:54+00:00</updated><id>/feed.xml</id><title type="html">Jekyll AsciiDoc Blog</title><subtitle>The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.</subtitle><entry><title type="html">Unzip zip rar</title><link href="/guides/2021/06/25/unzip.html" rel="alternate" type="text/html" title="Unzip zip rar" /><published>2021-06-25T00:00:00+00:00</published><updated>2021-06-25T00:00:00+00:00</updated><id>/guides/2021/06/25/unzip</id><content type="html" xml:base="/guides/2021/06/25/unzip.html">&lt;div class=&quot;sect2&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-06-25T08:33:48+00:00</updated><id>/feed.xml</id><title type="html">Jekyll AsciiDoc Blog</title><subtitle>The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.</subtitle><entry><title type="html">Unzip zip rar</title><link href="/guides/2021/06/25/unzip.html" rel="alternate" type="text/html" title="Unzip zip rar" /><published>2021-06-25T00:00:00+00:00</published><updated>2021-06-25T00:00:00+00:00</updated><id>/guides/2021/06/25/unzip</id><content type="html" xml:base="/guides/2021/06/25/unzip.html">&lt;div class=&quot;sect2&quot;&gt;
 &lt;h3 id=&quot;unzip_lib&quot;&gt;Unzip lib&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;这个命令行jar可以用来解压缩rar、zip等压缩文件
-&lt;a href=&quot;https://sunyuyangg555.github.io/Download/unzip.jar&quot;&gt;Download&lt;/a&gt;
-使用方法: java -jar unzip.jar -d C:\test\123.rar C:\dest&lt;/p&gt;
+&lt;a href=&quot;https://sunyuyangg555.github.io/download/unzip.jar&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;使用方法: java -jar unzip.jar -d C:\test\123.rar C:\dest&lt;/pre&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</content><author><name>Jiffy</name></author><category term="gho vmdk" /><summary type="html">Unzip zip files</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/zoom.jpg" /><media:content medium="image" url="/zoom.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Apache isis getting started</title><link href="/guides/2020/09/27/Apache-isis-getting-started.html" rel="alternate" type="text/html" title="Apache isis getting started" /><published>2020-09-27T00:00:00+00:00</published><updated>2020-09-27T00:00:00+00:00</updated><id>/guides/2020/09/27/Apache-isis-getting-started</id><content type="html" xml:base="/guides/2020/09/27/Apache-isis-getting-started.html">&lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
 &lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
