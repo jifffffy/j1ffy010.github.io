@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-06-25T08:33:48+00:00</updated><id>/feed.xml</id><title type="html">Jekyll AsciiDoc Blog</title><subtitle>The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.</subtitle><entry><title type="html">Unzip zip rar</title><link href="/guides/2021/06/25/unzip.html" rel="alternate" type="text/html" title="Unzip zip rar" /><published>2021-06-25T00:00:00+00:00</published><updated>2021-06-25T00:00:00+00:00</updated><id>/guides/2021/06/25/unzip</id><content type="html" xml:base="/guides/2021/06/25/unzip.html">&lt;div class=&quot;sect2&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-06-25T08:51:44+00:00</updated><id>/feed.xml</id><title type="html">Jekyll AsciiDoc Blog</title><subtitle>The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.</subtitle><entry><title type="html">Unzip zip rar</title><link href="/guides/2021/06/25/unzip.html" rel="alternate" type="text/html" title="Unzip zip rar" /><published>2021-06-25T00:00:00+00:00</published><updated>2021-06-25T00:00:00+00:00</updated><id>/guides/2021/06/25/unzip</id><content type="html" xml:base="/guides/2021/06/25/unzip.html">&lt;div class=&quot;sect2&quot;&gt;
 &lt;h3 id=&quot;unzip_lib&quot;&gt;Unzip lib&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;这个命令行jar可以用来解压缩rar、zip等压缩文件
@@ -9,7 +9,165 @@
 &lt;pre&gt;使用方法: java -jar unzip.jar -d C:\test\123.rar C:\dest&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</content><author><name>Jiffy</name></author><category term="gho vmdk" /><summary type="html">Unzip zip files</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/zoom.jpg" /><media:content medium="image" url="/zoom.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Apache isis getting started</title><link href="/guides/2020/09/27/Apache-isis-getting-started.html" rel="alternate" type="text/html" title="Apache isis getting started" /><published>2020-09-27T00:00:00+00:00</published><updated>2020-09-27T00:00:00+00:00</updated><id>/guides/2020/09/27/Apache-isis-getting-started</id><content type="html" xml:base="/guides/2020/09/27/Apache-isis-getting-started.html">&lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;/div&gt;</content><author><name>Jiffy</name></author><category term="gho vmdk" /><summary type="html">Unzip zip files</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/zoom.jpg" /><media:content medium="image" url="/zoom.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SDKMAN - best JVM manager</title><link href="/guides/2021/01/12/sdkman.html" rel="alternate" type="text/html" title="SDKMAN - best JVM manager" /><published>2021-01-12T00:00:00+00:00</published><updated>2021-01-12T00:00:00+00:00</updated><id>/guides/2021/01/12/sdkman</id><content type="html" xml:base="/guides/2021/01/12/sdkman.html">&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;jvm_ecosystem&quot;&gt;JVM ecosystem&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;When you are dealing with Big Data tools, then surely you need to use JVM of some sort. Installation of the JVM on a Linux machine is a straightforward process. Just install, export JAVA_HOME, and you are good to go.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Technically it is true, but what if you need to manage more Java versions at once? Or maybe you need to install additional JVM languages or tools. Add to this a fresh virtual machine for each new PoC (Proof of Concept) of the new project, and you can see where I&amp;#8217;m going.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For this issue, I present a great solution - [SDKMAN](&lt;a href=&quot;https://sdkman.io/&quot; class=&quot;bare&quot;&gt;https://sdkman.io/&lt;/a&gt;). It is a tool for managing JDK and other JVM tools and languages.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;sdkman_instalation&quot;&gt;SDKMAN Instalation&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;To install SDKMAN just type in the terminal:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;curl -s &quot;https://get.sdkman.io&quot; | bash&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;After that open new shell or just run &lt;code&gt;source ~/.bashrc&lt;/code&gt;. It is that simple!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;installing_jdks&quot;&gt;Installing JDKs&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Now let&amp;#8217;s install JDK 8 and JDK 11. For starters lets type:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;sdk list java&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;You should see a similar table. In this case, I trimmed the table to be smaller to fit on the page. In reality, there are many more versions of JDK to choose from.
+Available Java Versions:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt; Vendor        | Use | Version      | Dist    | Status     | Identifier
+ AdoptOpenJDK  |     | 14.0.2.j9    | adpt    |            | 14.0.2.j9-adpt
+               |     | 14.0.2.hs    | adpt    |            | 14.0.2.hs-adpt
+               |     | 13.0.2.j9    | adpt    |            | 13.0.2.j9-adpt
+               |     | 13.0.2.hs    | adpt    |            | 13.0.2.hs-adpt
+               |     | 12.0.2.j9    | adpt    |            | 12.0.2.j9-adpt
+               |     | 12.0.2.hs    | adpt    |            | 12.0.2.hs-adpt
+               | &amp;gt;&amp;gt;&amp;gt; | 11.0.8.j9    | adpt    |            | 11.0.8.j9-adpt
+               |     | 11.0.8.hs    | adpt    |            | 11.0.8.hs-adpt
+               |     | 8.0.265.j9   | adpt    |            | 8.0.265.j9-adpt
+               |     | 8.0.265.hs   | adpt    |            | 8.0.265.hs-adpt
+               |     | 8.0.252.j9   | adpt    |            | 8.0.252.j9-adpt
+ Amazon        |     | 11.0.8       | amzn    |            | 11.0.8-amzn
+               |     | 8.0.265      | amzn    |            | 8.0.265-amzn
+ Azul Zulu     |     | 14.0.2       | zulu    |            | 14.0.2-zulu&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I recommend installing JVM from AdoptOpenJDK. Just type (the last part is taken from column &lt;strong&gt;Identifier&lt;/strong&gt;):&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;sdk install java 8.0.265.hs-adpt&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;And for JDK 11 type:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;sdk install java 11.0.8.hs-adpt&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;managing_jdks&quot;&gt;Managing JDKs&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Let&amp;#8217;s see installed versions using: &lt;code&gt;sdk list java | grep installed&lt;/code&gt; . The &lt;code&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt; means a version in use.
+We can change the selected version by using following command:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;sdk use java &amp;lt;tag&amp;gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;where &lt;code&gt;&amp;lt;tag&amp;gt;&lt;/code&gt; is a version identifier (from the output of &lt;code&gt;sdk list java&lt;/code&gt;) like &lt;code&gt;8.0.265.hs-adpt&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;But &lt;code&gt;use&lt;/code&gt; changes only the JVM for the current shell. If we want to make a global change, type:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;sdk default java &amp;lt;tag&amp;gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Let&amp;#8217;s try this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;sdk default java 8.0.265.hs-adpt
+echo $JAVA_HOME
+java -version&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;As we can see, it easy to change the JVM version. &lt;strong&gt;Cool!&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;installing_scala_and_sbt&quot;&gt;Installing Scala and sbt&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Let&amp;#8217;s say you are using Apache Spark or Apache Flink for your Big Data project. For this, you may use Scala, a great mix of a functional and object-oriented language. The standard Scala build tool is the &lt;strong&gt;sbt&lt;/strong&gt; (like Maven or Gradle). If we want to install them, just use the SDKMAN!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Let&amp;#8217;s see available Scala and sbt versions:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;sdk list scala
+sdk list sbt&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We can install as many Scala and sbt versions as we like and change them as we did with the JDKs.
+So let&amp;#8217;s install Scala 2.11 and 2.13 and newest sbt.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;sdk install scala 2.13.3
+sdk install scala 2.11.12
+sdk install sbt 1.3.13&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;And that is it! With a single tool, we can see what is available, we can install what we need and even easily swap the versions. Such a great tool!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;check_out_sdkman_site&quot;&gt;Check out SDKMAN site&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Go to [sdkman.io/](&lt;a href=&quot;https://sdkman.io/&quot; class=&quot;bare&quot;&gt;https://sdkman.io/&lt;/a&gt;) and see what other [SDKs](&lt;a href=&quot;https://sdkman.io/sdks&quot; class=&quot;bare&quot;&gt;https://sdkman.io/sdks&lt;/a&gt;) and [JDKs](&lt;a href=&quot;https://sdkman.io/jdks&quot; class=&quot;bare&quot;&gt;https://sdkman.io/jdks&lt;/a&gt;) you can download.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name>Jiffy</name></author><category term="gho vmdk" /><summary type="html">SDKMAN! is a tool for managing parallel versions of multiple Software Development Kits on most Unix based systems.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/sdkman.jpg" /><media:content medium="image" url="/sdkman.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Apache isis getting started</title><link href="/guides/2020/09/27/Apache-isis-getting-started.html" rel="alternate" type="text/html" title="Apache isis getting started" /><published>2020-09-27T00:00:00+00:00</published><updated>2020-09-27T00:00:00+00:00</updated><id>/guides/2020/09/27/Apache-isis-getting-started</id><content type="html" xml:base="/guides/2020/09/27/Apache-isis-getting-started.html">&lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
 &lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
 &lt;ul class=&quot;sectlevel1&quot;&gt;
 &lt;li&gt;&lt;a href=&quot;#__getting-started_introducing-the-case-study&quot;&gt;Introducing the Case Study&lt;/a&gt;
@@ -729,100 +887,7 @@ We learnt how to load that app into an IDE, and how to run the app either from t
 &lt;p&gt;In the next chapter we&amp;#8217;ll [&lt;strong&gt;&lt;strong&gt;TODO - update once written&lt;/strong&gt;&lt;/strong&gt;].&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</content><author><name>Jiffy</name></author><category term="isis java" /><summary type="html">Apache Isis(TM) is a full-stack framework for building enterprise applications.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/isis/ch01/class-diagram.png" /><media:content medium="image" url="/isis/ch01/class-diagram.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SDKMAN - best JVM manager</title><link href="/2020/08/06/sdkman.html" rel="alternate" type="text/html" title="SDKMAN - best JVM manager" /><published>2020-08-06T00:00:00+00:00</published><updated>2020-08-06T00:00:00+00:00</updated><id>/2020/08/06/sdkman</id><content type="html" xml:base="/2020/08/06/sdkman.html">&lt;h2 id=&quot;jvm-ecosystem&quot;&gt;JVM ecosystem&lt;/h2&gt;
-&lt;p&gt;When you are dealing with Big Data tools, then surely you need to use JVM of some sort. Installation of the JVM on a Linux machine is a straightforward process. Just install, export JAVA_HOME, and you are good to go.&lt;/p&gt;
-
-&lt;p&gt;Technically it is true, but what if you need to manage more Java versions at once? Or maybe you need to install additional JVM languages or tools. Add to this a fresh virtual machine for each new PoC (Proof of Concept) of the new project, and you can see where I’m going.&lt;/p&gt;
-
-&lt;p&gt;For this issue, I present a great solution - &lt;a href=&quot;https://sdkman.io/&quot;&gt;SDKMAN&lt;/a&gt;. It is a tool for managing JDK and other JVM tools and languages.&lt;/p&gt;
-
-&lt;h2 id=&quot;sdkman-instalation&quot;&gt;SDKMAN Instalation&lt;/h2&gt;
-
-&lt;p&gt;To install SDKMAN just type in the terminal:&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://get.sdkman.io&quot;&lt;/span&gt; | bash
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;After that open new shell or just run &lt;code class=&quot;highlighter-rouge&quot;&gt;source ~/.bashrc&lt;/code&gt;. It is that simple!&lt;/p&gt;
-
-&lt;h2 id=&quot;installing-jdks&quot;&gt;Installing JDKs&lt;/h2&gt;
-
-&lt;p&gt;Now let’s install JDK 8 and JDK 11. For starters lets type:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sdk list java
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;You should see a similar table. In this case, I trimmed the table to be smaller to fit on the page. In reality, there are many more versions of JDK to choose from.&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;================================================================================&lt;/span&gt;
-Available Java Versions
-&lt;span class=&quot;o&quot;&gt;================================================================================&lt;/span&gt;
- Vendor        | Use | Version      | Dist    | Status     | Identifier
-&lt;span class=&quot;nt&quot;&gt;--------------------------------------------------------------------------------&lt;/span&gt;
- AdoptOpenJDK  |     | 14.0.2.j9    | adpt    |            | 14.0.2.j9-adpt      
-               |     | 14.0.2.hs    | adpt    |            | 14.0.2.hs-adpt      
-               |     | 13.0.2.j9    | adpt    |            | 13.0.2.j9-adpt      
-               |     | 13.0.2.hs    | adpt    |            | 13.0.2.hs-adpt      
-               |     | 12.0.2.j9    | adpt    |            | 12.0.2.j9-adpt      
-               |     | 12.0.2.hs    | adpt    |            | 12.0.2.hs-adpt      
-               | &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; | 11.0.8.j9    | adpt    |            | 11.0.8.j9-adpt      
-               |     | 11.0.8.hs    | adpt    |            | 11.0.8.hs-adpt      
-               |     | 8.0.265.j9   | adpt    |            | 8.0.265.j9-adpt     
-               |     | 8.0.265.hs   | adpt    |            | 8.0.265.hs-adpt     
-               |     | 8.0.252.j9   | adpt    |            | 8.0.252.j9-adpt     
- Amazon        |     | 11.0.8       | amzn    |            | 11.0.8-amzn         
-               |     | 8.0.265      | amzn    |            | 8.0.265-amzn        
- Azul Zulu     |     | 14.0.2       | zulu    |            | 14.0.2-zulu
-&lt;span class=&quot;o&quot;&gt;================================================================================&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I recommend installing JVM from AdoptOpenJDK. Just type (the last part is taken from column &lt;em&gt;Identifier&lt;/em&gt;):&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sdk &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;java 8.0.265.hs-adpt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;And for JDK 11 type:&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sdk &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;java 11.0.8.hs-adpt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;managing-jdks&quot;&gt;Managing JDKs&lt;/h2&gt;
-
-&lt;p&gt;Let’s see installed versions using: &lt;code class=&quot;highlighter-rouge&quot;&gt;sdk list java | grep installed&lt;/code&gt; . The &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt; means a version in use.
-We can change the selected version by using following command:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sdk use java &amp;lt;tag&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;where &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;tag&amp;gt;&lt;/code&gt; is a version identifier (from the output of &lt;code class=&quot;highlighter-rouge&quot;&gt;sdk list java&lt;/code&gt;) like &lt;code class=&quot;highlighter-rouge&quot;&gt;8.0.265.hs-adpt&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;But &lt;code class=&quot;highlighter-rouge&quot;&gt;use&lt;/code&gt; changes only the JVM for the current shell. If we want to make a global change, type:&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sdk default java &amp;lt;tag&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Let’s try this:&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sdk default java 8.0.265.hs-adpt
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$JAVA_HOME&lt;/span&gt;
-java &lt;span class=&quot;nt&quot;&gt;-version&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;As we can see, it easy to change the JVM version. &lt;em&gt;Cool!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;installing-scala-and-sbt&quot;&gt;Installing Scala and sbt&lt;/h2&gt;
-
-&lt;p&gt;Let’s say you are using Apache Spark or Apache Flink for your Big Data project. For this, you may use Scala, a great mix of a functional and object-oriented language. The standard Scala build tool is the &lt;em&gt;sbt&lt;/em&gt; (like Maven or Gradle). If we want to install them, just use the SDKMAN!&lt;/p&gt;
-
-&lt;p&gt;Let’s see available Scala and sbt versions:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sdk list scala
-sdk list sbt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;We can install as many Scala and sbt versions as we like and change them as we did with the JDKs.
-So let’s install Scala 2.11 and 2.13 and newest sbt.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sdk &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;scala 2.13.3
-sdk &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;scala 2.11.12
-sdk &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;sbt 1.3.13
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;And that is it! With a single tool, we can see what is available, we can install what we need and even easily swap the versions. Such a great tool!&lt;/p&gt;
-
-&lt;h2 id=&quot;check-out-sdkman-site&quot;&gt;Check out SDKMAN site&lt;/h2&gt;
-
-&lt;p&gt;Go to &lt;a href=&quot;https://sdkman.io/&quot;&gt;sdkman.io/&lt;/a&gt; and see what other &lt;a href=&quot;https://sdkman.io/sdks&quot;&gt;SDKs&lt;/a&gt; and &lt;a href=&quot;https://sdkman.io/jdks&quot;&gt;JDKs&lt;/a&gt; you can download.&lt;/p&gt;</content><author><name></name></author><summary type="html">JVM ecosystem When you are dealing with Big Data tools, then surely you need to use JVM of some sort. Installation of the JVM on a Linux machine is a straightforward process. Just install, export JAVA_HOME, and you are good to go.</summary></entry><entry><title type="html">How to change a Ghost “.gho” image file to a “.VMDK” file for use in VMWare</title><link href="/guides/2020/07/14/gho2vmdk.html" rel="alternate" type="text/html" title="How to change a Ghost &quot;.gho&quot; image file to a &quot;.VMDK&quot; file for use in VMWare" /><published>2020-07-14T00:00:00+00:00</published><updated>2020-07-14T00:00:00+00:00</updated><id>/guides/2020/07/14/gho2vmdk</id><content type="html" xml:base="/guides/2020/07/14/gho2vmdk.html">&lt;div class=&quot;sect2&quot;&gt;
+&lt;/div&gt;</content><author><name>Jiffy</name></author><category term="isis java" /><summary type="html">Apache Isis(TM) is a full-stack framework for building enterprise applications.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/isis/ch01/class-diagram.png" /><media:content medium="image" url="/isis/ch01/class-diagram.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How to change a Ghost “.gho” image file to a “.VMDK” file for use in VMWare</title><link href="/guides/2020/07/14/gho2vmdk.html" rel="alternate" type="text/html" title="How to change a Ghost &quot;.gho&quot; image file to a &quot;.VMDK&quot; file for use in VMWare" /><published>2020-07-14T00:00:00+00:00</published><updated>2020-07-14T00:00:00+00:00</updated><id>/guides/2020/07/14/gho2vmdk</id><content type="html" xml:base="/guides/2020/07/14/gho2vmdk.html">&lt;div class=&quot;sect2&quot;&gt;
 &lt;h3 id=&quot;answer&quot;&gt;Answer&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;You can change a .gho file to a .VMDK file using the DOS version of the ghost.exe, the Linux version of ghost.exe or ghost32.exe.
