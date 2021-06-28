@@ -1,15 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-06-25T09:02:13+00:00</updated><id>/feed.xml</id><title type="html">Jekyll AsciiDoc Blog</title><subtitle>The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.</subtitle><entry><title type="html">Unzip zip rar</title><link href="/guides/2021/06/25/unzip.html" rel="alternate" type="text/html" title="Unzip zip rar" /><published>2021-06-25T00:00:00+00:00</published><updated>2021-06-25T00:00:00+00:00</updated><id>/guides/2021/06/25/unzip</id><content type="html" xml:base="/guides/2021/06/25/unzip.html">&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;unzip_lib&quot;&gt;Unzip lib&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-06-28T08:50:12+00:00</updated><id>/feed.xml</id><title type="html">Jekyll AsciiDoc Blog</title><subtitle>The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.</subtitle><entry><title type="html">Unzip zip rar</title><link href="/guides/2021/06/25/archivg.html" rel="alternate" type="text/html" title="Unzip zip rar" /><published>2021-06-25T00:00:00+00:00</published><updated>2021-06-25T00:00:00+00:00</updated><id>/guides/2021/06/25/archivg</id><content type="html" xml:base="/guides/2021/06/25/archivg.html">&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;archivg&quot;&gt;ArchivG&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;这个命令行jar可以用来解压缩rar、zip等压缩文件
-&lt;a href=&quot;https://sunyuyangg555.github.io/download/unzip.jar&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;image::archivg.png&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;listingblock&quot;&gt;
-&lt;div class=&quot;content&quot;&gt;
-&lt;pre&gt;使用方法: java -jar unzip.jar -d C:\test\123.rar C:\dest&lt;/pre&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;这个工具使用http://sevenzipjbind.sourceforge.net/extraction_snippets.html[Seven Zip Jbind]解压缩常用格式压缩文件
+&lt;a href=&quot;https://sunyuyangg555.github.io/download/ArchivG-1.0-SNAPSHOT-all.jar&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content><author><name>Jiffy</name></author><category term="gho vmdk" /><summary type="html">Unzip zip files</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/zoom.jpg" /><media:content medium="image" url="/zoom.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SDKMAN - best JVM manager</title><link href="/guides/2021/01/12/sdkman.html" rel="alternate" type="text/html" title="SDKMAN - best JVM manager" /><published>2021-01-12T00:00:00+00:00</published><updated>2021-01-12T00:00:00+00:00</updated><id>/guides/2021/01/12/sdkman</id><content type="html" xml:base="/guides/2021/01/12/sdkman.html">&lt;div class=&quot;sect1&quot;&gt;
+&lt;/div&gt;</content><author><name>Jiffy</name></author><category term="gho vmdk" /><summary type="html">Unzip zip files</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/archivg.png" /><media:content medium="image" url="/archivg.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">SDKMAN - best JVM manager</title><link href="/guides/2021/01/12/sdkman.html" rel="alternate" type="text/html" title="SDKMAN - best JVM manager" /><published>2021-01-12T00:00:00+00:00</published><updated>2021-01-12T00:00:00+00:00</updated><id>/guides/2021/01/12/sdkman</id><content type="html" xml:base="/guides/2021/01/12/sdkman.html">&lt;div class=&quot;sect1&quot;&gt;
 &lt;h2 id=&quot;jvm_ecosystem&quot;&gt;JVM ecosystem&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
